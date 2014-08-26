@@ -1,0 +1,3 @@
+class LotsController < ApplicationController
+
+end
