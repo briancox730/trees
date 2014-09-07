@@ -8,3 +8,21 @@ Migrating to CreateLots (20140826192038)
   [1m[36mSQL (3.9ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140826192038"]]
   [1m[35m (0.8ms)[0m  COMMIT
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (3.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateOrders (20140827013457)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (65.4ms)[0m  [1mCREATE TABLE "orders" ("id" serial primary key, "tree_id" integer, "name" character varying(255), "email" character varying(255), "address" character varying(255), "zipcode" integer, "city" character varying(255), "state" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140827013457"]]
+  [1m[36m (2.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateTrees (20140907222142)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (6.2ms)[0m  [1mCREATE TABLE "trees" ("id" serial primary key, "name" character varying(255) NOT NULL, "height" integer NOT NULL, "price" integer NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20140907222142"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateZips (20140907222219)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "zips" ("id" serial primary key, "code" integer) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "index_zips_on_code" ON "zips"  ("code")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20140907222219"]]
+  [1m[35m (1.6ms)[0m  COMMIT
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
