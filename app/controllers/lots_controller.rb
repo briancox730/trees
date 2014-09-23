@@ -1,5 +1,5 @@
 class LotsController < ApplicationController
   def index
-    @lots = Lots.all
+    @lots = Lot.all
   end
 end

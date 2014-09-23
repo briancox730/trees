@@ -11,16 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140907222219) do
+ActiveRecord::Schema.define(version: 20140923195122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "lots", force: true do |t|
-    t.string "name", null: false
+    t.string   "name",                                null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "first_name",                          null: false
+    t.string   "last_name",                           null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
 
+  add_index "lots", ["email"], name: "index_lots_on_email", unique: true, using: :btree
   add_index "lots", ["name"], name: "index_lots_on_name", unique: true, using: :btree
+  add_index "lots", ["reset_password_token"], name: "index_lots_on_reset_password_token", unique: true, using: :btree
 
   create_table "orders", force: true do |t|
     t.integer  "tree_id"

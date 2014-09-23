@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.1'
 gem 'simple_form', git: 'git://github.com/plataformatec/simple_form'
+gem 'devise'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
