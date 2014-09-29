@@ -10,29 +10,37 @@
       <div class='panel-body'>
         <% if @orders.empty? %>
           <p>Add Trees and Zipcodes to start recieving orders!</p>
+        <% else %>
+          <div style='overflow: auto; max-height: 350px;'>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Name</th>
+                  <th>Remove?</th>
+                </tr>
+              </thead>
+              <% @orders.each_with_index do |order, index| %>
+                <tr>
+                  <td><%= index + 1 %></td>
+                  <td><%=  %></td>
+                  <td style='text-align: right;'>
+                    <!--<%= link_to zip_path(zip), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' do %>
+                      <i class="fa fa-trash-o "></i>
+                    <% end %> -->
+                  </td>
+                </tr>
+              <% end %>
+            </table>
+          </div>
         <% end %>
-        <div style='overflow: auto; max-height: 350px;'>
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th></th>
-                <th>Name</th>
-                <th>Remove?</th>
-              </tr>
-            </thead>
-            <% @orders.each_with_index do |order, index| %>
-              <tr>
-                <td><%= index + 1 %></td>
-                <td><%=  %></td>
-                <td style='text-align: right;'>
-                  <!--<%= link_to zip_path(zip), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' do %>
-                    <i class="fa fa-trash-o "></i>
-                  <% end %> -->
-                </td>
-              </tr>
-            <% end %>
-          </table>
-        </div>
+      </div>
+    </div>
+
+    <div class='panel panel-default'>
+      <div class="panel-heading">Available Trees</div>
+      <div class='panel-body'>
+
       </div>
     </div>
   </div>

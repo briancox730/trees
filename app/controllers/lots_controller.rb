@@ -10,5 +10,7 @@ class LotsController < ApplicationController
     @new_zip = Zip.new
     @delivery_zipcodes = Zip.where(lot_id: @lot.id)
     @orders = Order.where(lot_id: @lot.id)
+    @trees = Tree.where(lot_id: @lot.id)
+    @new_tree = Tree.new
   end
 end
