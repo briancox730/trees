@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-xs-4">
+  </div>
+  <div class="col-xs-4 well">
+    <h3>Enter your zipcode</h3>
+    <%= simple_form_for :zipcode_search,  url: zipcode_search_orders_path , method: :get do |f| %>
+      <%= f.input :zipcode,
+                  autofocus: true,
+                  input_html: { class: 'form-control'},
+                  label: false,
+                  placeholder: 'Search our delivery network!' %>
+      <br>
+      <%= f.submit "Submit", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+  <div class="col-xs-4">
+  </div>
+</div>

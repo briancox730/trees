@@ -32,6 +32,12 @@ group :production, :staging do
   gem 'unicorn', '4.6.3' # rack http server
   gem 'rails_12factor'
 end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'pry-rails'
+end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

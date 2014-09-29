@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140923195122) do
+ActiveRecord::Schema.define(version: 20140929134338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,9 +55,8 @@ ActiveRecord::Schema.define(version: 20140923195122) do
   end
 
   create_table "zips", force: true do |t|
-    t.integer "code"
+    t.integer "lot_id"
+    t.string  "code"
   end
-
-  add_index "zips", ["code"], name: "index_zips_on_code", unique: true, using: :btree
 
 end

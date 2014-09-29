@@ -1,1 +1,64 @@
-new.html.erb
+ <div class="row">
+  <div class="col-xs-2">
+  </div>
+  <div class="col-xs-8 well">
+    <h1>Trees to your door</h1>
+    <br>
+    <%= simple_form_for(@order, url: new_order_path(@order)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+
+        <%= f.input :tree_id,
+                    required: true,
+                    placeholder: 'Choose Tree',
+                    collection: Trees.all,
+                    label: false,
+                    input_html: { class: 'form-control'} %>
+                    <br>
+        <%= f.input :name,
+                    required: true,
+                    label: false,
+                    placeholder: 'Name',
+                    input_html: { class: 'form-control'} %>
+                    <br>
+        <%= f.input :email,
+                    required: true,
+                    label: false,
+                    placeholder: 'Email',
+                    input_html: { class: 'form-control'} %>
+                    <br>
+        <%= f.input :address,
+                    required: true,
+                    label: false,
+                    placeholder: 'Address',
+                    input_html: { class: 'form-control'} %>
+                    <br>
+        <%= f.input :city,
+                    required: true,
+                    label: false,
+                    placeholder: 'City',
+                    input_html: { class: 'form-control'} %>
+                    <br>
+        <%= f.input :state,
+                    required: true,
+                    label: false,
+                    placeholder: 'State',
+                    input_html: { class: 'form-control'} %>
+                    <br>
+        <%= f.input :zipcode,
+                    required: true,
+                    label: false,
+                    placeholder: 'Zipcode',
+                    input_html: { class: 'form-control'} %>
+                    <br>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up", class: "btn btn-lg btn-block" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-xs-2">
+  </div>
+</div>

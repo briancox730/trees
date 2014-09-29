@@ -1,0 +1,85 @@
+<div class='row'>
+  <div class="page-header">
+    <h1><%= @lot.name %> <small>Tree's for all</small></h1>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-xs-8'>
+    <div class='panel panel-default'>
+      <div class="panel-heading">Your Orders</div>
+      <div class='panel-body'>
+        <% if @orders.empty? %>
+          <p>Add Trees and Zipcodes to start recieving orders!</p>
+        <% end %>
+        <div style='overflow: auto; max-height: 350px;'>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Remove?</th>
+              </tr>
+            </thead>
+            <% @orders.each_with_index do |order, index| %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%=  %></td>
+                <td style='text-align: right;'>
+                  <!--<%= link_to zip_path(zip), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' do %>
+                    <i class="fa fa-trash-o "></i>
+                  <% end %> -->
+                </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='col-xs-4'>
+    <div class='panel panel-default'>
+      <div class="panel-heading">Zipcodes served</div>
+      <div class='panel-body'>
+        <% if @delivery_zipcodes.empty? %>
+          <p>Add a zipcode and start recieving orders!</p>
+        <% end %>
+        <div style='overflow: auto; max-height: 350px;'>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th></th>
+                <th>Zipcode</th>
+                <th style='text-align: right;'>Remove?</th>
+              </tr>
+            </thead>
+            <% @delivery_zipcodes.each_with_index do |zip, index| %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= zip.code %></td>
+                <td style='text-align: right;'>
+                  <%= link_to zip_path(zip), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' do %>
+                    <i class="fa fa-trash-o "></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+        <%= simple_form_for @new_zip do |f| %>
+          <%= f.input :code,
+                      autofocus: true,
+                      input_html: { class: 'form-control'},
+                      label: false,
+                      placeholder: 'Add a zipcode' %>
+          <%= f.input :lot_id,
+                      as: :hidden,
+                      input_html: { value: @lot.id}
+                      %>
+          <br>
+          <%= f.submit "Submit", class: 'btn btn-primary' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
