@@ -5,4 +5,7 @@ class Lot < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, uniqueness: true
+
+  has_many :available_trees
+  has_many :zips
 end
