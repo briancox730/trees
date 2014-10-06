@@ -19,7 +19,7 @@
                   <th>Name</th>
                   <th>Address</th>
                   <th>Tree</th>
-                  <th>Release?</th>
+                  <th class='text-right'>Delivered/Release?</th>
                 </tr>
               </thead>
               <% @orders.each_with_index do |order, index| %>
@@ -32,8 +32,11 @@
                   <td>
                     <%= order.tree.height.to_s + " ft. " + order.tree.type.name %>
                   </td>
-                  <td>
-                    <%= link_to order_release_orders_path(order_id: order.id), method: :post, class: 'btn btn-success' do %>
+                  <td class='text-right'>
+                    <%= link_to order_delivered_orders_path(order_id: order.id), method: :post, class: 'btn btn-success' do %>
+                      <i class="fa fa-tree "></i>
+                    <% end %>
+                    <%= link_to order_release_orders_path(order_id: order.id), data: { confirm: "Are you sure?" }, method: :post, class: 'btn btn-danger' do %>
                       <i class="fa fa-remove "></i>
                     <% end %>
                   </td>

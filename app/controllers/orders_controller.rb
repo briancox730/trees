@@ -48,6 +48,19 @@ class OrdersController < ApplicationController
     end
   end
 
+  def order_delivered
+    @order = Order.find(params[:order_id])
+    @order.delivered = true
+
+    if @order.save
+      flash[:notice] = "Order Delivered!"
+      redirect_to lot_path(current_lot.id)
+    else
+      flash[:notice] = "Order Delivered Failed!"
+      redirect_to lot_path(current_lot.id)
+    end
+  end
+
   def zipcode_search
     @zip = params[:zipcode_search][:zipcode]
 
