@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-xs-2">
+  </div>
+  <div class="col-xs-8 well">
+    <h3>Unclaimed Orders!</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Address</th>
+          <th>City, State, Zipcode</th>
+          <th>Tree</th>
+          <th>Claim!</th>
+        </tr>
+      </thead>
+      <% @orders.each_with_index do |order, index| %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= order.name %></td>
+          <td><%= order.address %></td>
+          <td><%= order.city + ", " + order.state + " " + order.zipcode %></td>
+          <td><%= order.tree.height.to_s + " ft. " + order.tree.type.name %></td>
+          <td>
+            <%= link_to order_claim_orders_path(order_id: order.id), method: :post, class: 'btn btn-success' do %>
+              <i class="fa fa-star "></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+  <div class="col-xs-2">
+  </div>
+</div>

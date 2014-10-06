@@ -4,7 +4,7 @@
   <div class="col-xs-8 well">
     <h1>Trees to your door</h1>
     <br>
-    <%= simple_form_for(@order, url: new_order_path(@order)) do |f| %>
+    <%= simple_form_for @order do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
@@ -12,8 +12,9 @@
         <%= f.input :tree_id,
                     required: true,
                     placeholder: 'Choose Tree',
-                    collection: Trees.all,
+                    collection: @available_trees,
                     label: false,
+                    prompt: 'Choose From Available Trees',
                     input_html: { class: 'form-control'} %>
                     <br>
         <%= f.input :name,
@@ -55,7 +56,7 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: "btn btn-lg btn-block" %>
+        <%= f.button :submit, "Order!", class: "btn btn-lg btn-block" %>
       </div>
     <% end %>
   </div>

@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="col-xs-3">
+  </div>
+  <div class="col-xs-6 well">
+    <h3><%= @order.tree.height.to_s + " ft. " + @order.tree.type.name %></h3>
+    <%= @order.name %>
+    <%= @order.address %>
+    <%= @order.city + ", " + @order.state + ", " + @order.zipcode %>
+  </div>
+  <div class="col-xs-3">
+  </div>
+</div>

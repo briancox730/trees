@@ -14,4 +14,8 @@ class LotsController < ApplicationController
     @available_trees = @lot.available_trees
     @new_tree = AvailableTree.new
   end
+
+  def open_orders
+    @orders = Order.where(lot_id: nil)
+  end
 end
