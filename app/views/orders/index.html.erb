@@ -2,7 +2,8 @@
   <div class="col-xs-4">
   </div>
   <div class="col-xs-4 well">
-    <h3>Enter your zipcode</h3>
+    <h2>Enter your zipcode</h2>
+    <br>
     <%= simple_form_for :zipcode_search,  url: zipcode_search_orders_path , method: :get do |f| %>
       <%= f.input :zipcode,
                   autofocus: true,
