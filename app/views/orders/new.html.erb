@@ -8,15 +8,19 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <div class="btn-group" data-toggle="buttons">
-          <%= f.input :tree_id,
-                      required: true,
-                      collection: @available_trees,
-                      label: false,
-                      as: :radio_buttons,
-                      item_label_class: 'btn btn-success' %>
-                      <br>
+        <%= f.input :tree_id,
+                    required: true,
+                    collection: @available_trees,
+                    selected: @available_trees.first,
+                    label: false,
+                    input_html: { class: 'form-control'} %>
+                    <br>
+        <div class="tree-display" id="tree-display">
+          <div class="tree-icons">
+            <i class="fa fa-tree fa-4x" id="tree-icon"></i>
+          </div>
         </div>
+        <br>
         <%= f.input :name,
                     required: true,
                     label: false,
