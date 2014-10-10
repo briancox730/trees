@@ -15,7 +15,7 @@
                     label: false,
                     input_html: { class: 'form-control'} %>
                     <br>
-        <div class="tree-display" id="tree-display">
+        <div class="tree-display display-none" id="tree-display">
           <div class="tree-icons">
             <i class="fa fa-tree fa-3x" id="tree-icon"></i>
           </div>
@@ -58,10 +58,10 @@
           </div>
           <div class="col-xs-4">
             <%= f.input :zipcode,
+                        disabled: true,
                         required: true,
                         label: false,
-                        placeholder: 'Zipcode',
-                        input_html: { class: 'form-control'} %>
+                        input_html: { class: 'form-control', value: @zip} %>
                         <br>
           </div>
         </div>
