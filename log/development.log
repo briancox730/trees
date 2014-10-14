@@ -30938,3 +30938,110 @@ Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-09 16:05:17 -040
 
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-09 16:05:17 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-10 17:04:52 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by OrdersController#index as HTML
+  Rendered orders/index.html.erb within layouts/application (80.9ms)
+  [1m[35mLot Load (1.1ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+Completed 200 OK in 189ms (Views: 173.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/orders/zipcode_search?utf8=%E2%9C%93&zipcode_search%5Bzipcode%5D=01970&commit=Submit" for 127.0.0.1 at 2014-10-10 17:04:58 -0400
+Processing by OrdersController#zipcode_search as HTML
+  Parameters: {"utf8"=>"✓", "zipcode_search"=>{"zipcode"=>"01970"}, "commit"=>"Submit"}
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "zips"  WHERE "zips"."code" = '01970'[0m
+Redirected to http://localhost:3000/orders/new?zip=01970
+Completed 302 Found in 8ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/orders/new?zip=01970" for 127.0.0.1 at 2014-10-10 17:04:58 -0400
+Processing by OrdersController#new as HTML
+  Parameters: {"zip"=>"01970"}
+  [1m[35mZip Load (0.2ms)[0m  SELECT "zips".* FROM "zips"  WHERE "zips"."code" = '01970'
+  [1m[36mLot Load (0.3ms)[0m  [1mSELECT "lots".* FROM "lots"  WHERE "lots"."id" IN (1)[0m
+  [1m[35mAvailableTree Load (0.3ms)[0m  SELECT "available_trees".* FROM "available_trees"  WHERE "available_trees"."lot_id" = $1  [["lot_id", 1]]
+  [1m[36mTree Load (1.2ms)[0m  [1mSELECT "trees".* FROM "trees"  WHERE "trees"."id" IN (11, 12, 4, 2, 3)[0m
+  [1m[35mType Load (0.5ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mType Load (0.2ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered orders/new.html.erb within layouts/application (18.9ms)
+  [1m[36mLot Load (0.3ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+Completed 200 OK in 105ms (Views: 23.6ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-10 17:04:59 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-10 17:04:59 -0400
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-10 17:04:59 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-10 17:04:59 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-10 17:04:59 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-10 17:04:59 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-10 17:04:59 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-10 17:04:59 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-10 17:04:59 -0400
+
+
+Started GET "/assets/fraser.jpg" for 127.0.0.1 at 2014-10-10 17:04:59 -0400
+
+
+Started GET "/orders/new?zip=01970" for 127.0.0.1 at 2014-10-10 17:05:32 -0400
+Processing by OrdersController#new as HTML
+  Parameters: {"zip"=>"01970"}
+  [1m[35mZip Load (0.3ms)[0m  SELECT "zips".* FROM "zips"  WHERE "zips"."code" = '01970'
+  [1m[36mLot Load (0.3ms)[0m  [1mSELECT "lots".* FROM "lots"  WHERE "lots"."id" IN (1)[0m
+  [1m[35mAvailableTree Load (0.2ms)[0m  SELECT "available_trees".* FROM "available_trees"  WHERE "available_trees"."lot_id" = $1  [["lot_id", 1]]
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT "trees".* FROM "trees"  WHERE "trees"."id" IN (11, 12, 4, 2, 3)[0m
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mType Load (0.5ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered orders/new.html.erb within layouts/application (8.4ms)
+  [1m[36mLot Load (0.3ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+Completed 200 OK in 20ms (Views: 12.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-10 17:05:32 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-10 17:05:32 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-10 17:05:32 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-10 17:05:32 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-10 17:05:32 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-10 17:05:32 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-10 17:05:32 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-10 17:05:32 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-10 17:05:32 -0400
