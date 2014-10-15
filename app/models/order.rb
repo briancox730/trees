@@ -1,5 +1,6 @@
 class Order < ActiveRecord::Base
   belongs_to :tree
+  belongs_to :window
 
   def self.available_trees(zip)
     lot_ids = Zip.where(code: zip).map(&:lot_id)

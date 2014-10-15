@@ -1,7 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Type.create(name: "Fraser Fir")
+Type.create(name: "Balsam Fir")
+
+Tree.create(height: 5, price: 6999, type_id: 1)
+Tree.create(height: 6, price: 7999, type_id: 1)
+Tree.create(height: 7, price: 8999, type_id: 1)
+Tree.create(height: 8, price: 9999, type_id: 1)
+Tree.create(height: 6, price: 5999, type_id: 2)
+Tree.create(height: 7, price: 6999, type_id: 2)
+Tree.create(height: 8, price: 7999, type_id: 2)
+
+Window.create(delivery_window: "As soon as possible")
+Window.create(delivery_window: "Weekday: Evenings")
+Window.create(delivery_window: "Weekend: Evenings")
+Window.create(delivery_window: "Weekend: Afternoon")
+Window.create(delivery_window: "Weekend: Morning")

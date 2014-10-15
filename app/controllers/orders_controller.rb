@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
     @zip = params[:zip]
     @available_trees = Order.available_trees(@zip)
     @order = Order.new
+    @windows = Window.all
   end
 
   def create

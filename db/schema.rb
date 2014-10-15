@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141006140918) do
+ActiveRecord::Schema.define(version: 20141015180814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20141006140918) do
     t.integer  "lot_id"
     t.string   "zipcode",                    null: false
     t.boolean  "delivered",  default: false
+    t.integer  "window_id"
   end
 
   create_table "trees", force: true do |t|
@@ -66,6 +67,10 @@ ActiveRecord::Schema.define(version: 20141006140918) do
   end
 
   add_index "types", ["name"], name: "index_types_on_name", unique: true, using: :btree
+
+  create_table "windows", force: true do |t|
+    t.string "delivery_window"
+  end
 
   create_table "zips", force: true do |t|
     t.integer "lot_id"

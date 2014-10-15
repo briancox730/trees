@@ -20,6 +20,7 @@
                   <th>Name</th>
                   <th>Address</th>
                   <th>Tree</th>
+                  <th>Delivery Window</th>
                   <th class='text-right'>Delivered/Release?</th>
                 </tr>
               </thead>
@@ -32,6 +33,9 @@
                   </td>
                   <td>
                     <%= order.tree.height.to_s + " ft. " + order.tree.type.name %>
+                  </td>
+                  <td>
+                    <%= order.window.delivery_window if order.window.present? %>
                   </td>
                   <td class='text-right'>
                     <%= link_to order_delivered_orders_path(order_id: order.id), method: :post, class: 'btn btn-success' do %>
