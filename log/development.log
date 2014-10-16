@@ -31746,3 +31746,864 @@ Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-15 14:40:46 -040
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-15 14:40:46 -0400
   [1m[35mTree Load (0.7ms)[0m  SELECT  "trees".* FROM "trees"   ORDER BY "trees"."id" ASC LIMIT 1
   [1m[36mType Load (0.5ms)[0m  [1mSELECT  "types".* FROM "types"   ORDER BY "types"."id" ASC LIMIT 1[0m
+  [1m[36mWindow Load (0.5ms)[0m  [1mSELECT "windows".* FROM "windows"[0m
+  [1m[35mWindow Load (0.3ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "windows" SET "delivery_window" = $1 WHERE "windows"."id" = 1  [["delivery_window", "As soon as possible, drop off is fine!"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mWindow Load (0.4ms)[0m  SELECT "windows".* FROM "windows"
+
+
+Started GET "/assets/chosen-sprite@2x.png" for 127.0.0.1 at 2014-10-15 16:11:18 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [GET] "/assets/chosen-sprite@2x.png"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/briancox730/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/briancox730/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/briancox730/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.9ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (39.2ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (72.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-15 16:12:30 -0400
+Processing by OrdersController#index as HTML
+  Rendered orders/index.html.erb within layouts/application (50.5ms)
+  [1m[35mLot Load (0.9ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+Completed 200 OK in 127ms (Views: 114.1ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-15 16:12:30 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-15 16:12:30 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-15 16:12:30 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-15 16:12:30 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-15 16:12:30 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-15 16:12:30 -0400
+
+
+Started GET "/lots/1" for 127.0.0.1 at 2014-10-15 16:12:33 -0400
+Processing by LotsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mLot Load (0.4ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mLot Load (0.3ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "orders"  WHERE "orders"."lot_id" = 1 AND "orders"."delivered" = 'f'[0m
+  [1m[35mOrder Load (0.3ms)[0m  SELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" = 1 AND "orders"."delivered" = 'f'
+  [1m[36mTree Load (0.3ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mType Load (0.3ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT "trees".* FROM "trees"[0m
+  [1m[35mType Load (0.4ms)[0m  SELECT "types".* FROM "types"  WHERE "types"."id" IN (1, 2)
+  [1m[36mAvailableTree Load (0.4ms)[0m  [1mSELECT "available_trees".* FROM "available_trees"  WHERE "available_trees"."lot_id" = $1[0m  [["lot_id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "zips"  WHERE "zips"."lot_id" = 1
+  [1m[36mZip Load (0.2ms)[0m  [1mSELECT "zips".* FROM "zips"  WHERE "zips"."lot_id" = 1[0m
+  Rendered lots/show.html.erb within layouts/application (90.6ms)
+Completed 200 OK in 115ms (Views: 87.1ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-15 16:12:41 -0400
+Processing by LotsController#open_orders as HTML
+  [1m[35mLot Load (0.3ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL[0m
+  [1m[35mTree Load (0.2ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mType Load (0.2ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `delivery_window' for nil:NilClass):
+    22:           <td><%= order.address %></td>
+    23:           <td><%= order.city + ", " + order.state + " " + order.zipcode %></td>
+    24:           <td><%= order.tree.height.to_s + " ft. " + order.tree.type.name %></td>
+    25:           <td><%= order.window.delivery_window %></td>
+    26:           <td>
+    27:             <%= link_to order_claim_orders_path(order_id: order.id), method: :post, class: 'btn btn-success' do %>
+    28:               <i class="fa fa-star "></i>
+  app/views/lots/open_orders.html.erb:25:in `block in _app_views_lots_open_orders_html_erb__4341121307384698107_70172120402820'
+  app/views/lots/open_orders.html.erb:18:in `_app_views_lots_open_orders_html_erb__4341121307384698107_70172120402820'
+
+
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.6ms)
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-15 16:12:41 -0400
+Processing by LotsController#open_orders as HTML
+  [1m[35mLot Load (0.5ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL[0m
+  [1m[35mTree Load (0.4ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mType Load (0.2ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (undefined method `delivery_window' for nil:NilClass):
+    22:           <td><%= order.address %></td>
+    23:           <td><%= order.city + ", " + order.state + " " + order.zipcode %></td>
+    24:           <td><%= order.tree.height.to_s + " ft. " + order.tree.type.name %></td>
+    25:           <td><%= order.window.delivery_window %></td>
+    26:           <td>
+    27:             <%= link_to order_claim_orders_path(order_id: order.id), method: :post, class: 'btn btn-success' do %>
+    28:               <i class="fa fa-star "></i>
+  app/views/lots/open_orders.html.erb:25:in `block in _app_views_lots_open_orders_html_erb__4341121307384698107_70172121686800'
+  app/views/lots/open_orders.html.erb:18:in `_app_views_lots_open_orders_html_erb__4341121307384698107_70172121686800'
+
+
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.7ms)
+  [1m[36mOrder Load (0.7ms)[0m  [1mSELECT "orders".* FROM "orders"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mWindow Load (0.6ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "orders" SET "updated_at" = $1, "window_id" = $2 WHERE "orders"."id" = 3  [["updated_at", "2014-10-15 20:13:49.877250"], ["window_id", 1]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders"
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "orders" SET "updated_at" = $1, "window_id" = $2 WHERE "orders"."id" = 1  [["updated_at", "2014-10-15 20:14:28.769865"], ["window_id", 1]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "orders" SET "updated_at" = $1, "window_id" = $2 WHERE "orders"."id" = 5[0m  [["updated_at", "2014-10-15 20:14:28.773961"], ["window_id", 1]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "orders" SET "updated_at" = $1, "window_id" = $2 WHERE "orders"."id" = 2  [["updated_at", "2014-10-15 20:14:28.776045"], ["window_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "orders" SET "updated_at" = $1, "window_id" = $2 WHERE "orders"."id" = 4[0m  [["updated_at", "2014-10-15 20:14:28.777633"], ["window_id", 1]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  COMMIT
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-15 16:14:33 -0400
+Processing by LotsController#open_orders as HTML
+  [1m[35mLot Load (0.3ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL[0m
+  [1m[35mTree Load (0.2ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mType Load (0.2ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mWindow Load (0.3ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-15 16:14:33 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-15 16:14:33 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-15 16:14:33 -0400
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-15 16:14:33 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-15 16:14:33 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-15 16:14:33 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-15 16:14:33 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-15 16:14:33 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-15 16:14:33 -0400
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-15 16:15:02 -0400
+Processing by LotsController#open_orders as HTML
+  [1m[36mLot Load (0.3ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mWindow Load (0.2ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-15 16:15:02 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-15 16:15:02 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-15 16:15:02 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-15 16:15:02 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-15 16:15:02 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-15 16:15:02 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-15 16:15:02 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-15 16:15:02 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-15 16:15:02 -0400
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-15 16:18:40 -0400
+Processing by LotsController#open_orders as HTML
+  [1m[35mLot Load (0.3ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL[0m
+  [1m[35mTree Load (0.2ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mType Load (0.2ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mWindow Load (0.2ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 34ms (Views: 30.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-15 16:18:40 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-15 16:18:40 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-15 16:18:40 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-15 16:18:40 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-15 16:18:40 -0400
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-15 16:18:40 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-15 16:18:40 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-15 16:18:40 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-15 16:18:40 -0400
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-15 16:18:41 -0400
+Processing by LotsController#open_orders as HTML
+  [1m[36mLot Load (0.3ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL
+  [1m[36mTree Load (0.1ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mWindow Load (0.2ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-15 16:18:41 -0400
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-15 16:18:41 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-15 16:18:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-15 16:18:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-15 16:18:41 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-15 16:18:41 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-15 16:18:41 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-15 16:18:41 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-15 16:18:41 -0400
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-15 16:19:00 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by LotsController#open_orders as HTML
+  [1m[35mLot Load (0.9ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36mOrder Load (0.9ms)[0m  [1mSELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL[0m
+  [1m[35mTree Load (0.4ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mType Load (0.3ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mWindow Load (0.8ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (52.5ms)
+Completed 200 OK in 198ms (Views: 153.9ms | ActiveRecord: 13.8ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-15 16:19:00 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-15 16:19:00 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-15 16:19:00 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-15 16:19:00 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-15 16:19:00 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-15 16:19:00 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-15 16:19:00 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-15 16:19:00 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-15 16:19:00 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-15 16:19:05 -0400
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-15 16:19:05 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-15 16:19:05 -0400
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-15 16:19:43 -0400
+Processing by LotsController#open_orders as HTML
+  [1m[36mLot Load (0.5ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mOrder Load (0.3ms)[0m  SELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL
+  [1m[36mTree Load (0.3ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mWindow Load (0.2ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (38.5ms)
+Completed 200 OK in 52ms (Views: 49.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-15 16:19:43 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-15 16:19:43 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-15 16:19:43 -0400
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-15 16:19:43 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-15 16:19:43 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-15 16:19:43 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-15 16:19:43 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-15 16:19:43 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-15 16:19:43 -0400
+
+
+Started GET "/assets/tree-bg.jpg" for 127.0.0.1 at 2014-10-15 16:19:43 -0400
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-15 16:21:10 -0400
+Processing by LotsController#open_orders as HTML
+  [1m[35mLot Load (0.4ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL[0m
+  [1m[35mTree Load (0.3ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mType Load (0.3ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mWindow Load (0.2ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-15 16:21:11 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-15 16:21:11 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-15 16:21:11 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-15 16:21:11 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-15 16:21:11 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-15 16:21:11 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-15 16:21:11 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-15 16:21:11 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-15 16:21:11 -0400
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-15 16:24:20 -0400
+Processing by LotsController#open_orders as HTML
+  [1m[36mLot Load (0.4ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL
+  [1m[36mTree Load (0.3ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mWindow Load (0.2ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-15 16:24:20 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-15 16:24:20 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-15 16:24:20 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-15 16:24:20 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-15 16:24:20 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-15 16:24:20 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-15 16:24:20 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-15 16:24:20 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-15 16:24:20 -0400
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-15 16:25:41 -0400
+Processing by LotsController#open_orders as HTML
+  [1m[35mLot Load (0.4ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL[0m
+  [1m[35mTree Load (0.2ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mType Load (0.2ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mWindow Load (0.2ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-15 16:25:41 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-15 16:25:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-15 16:25:41 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-15 16:25:41 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-15 16:25:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-15 16:25:41 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-15 16:25:41 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-15 16:25:41 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-15 16:25:41 -0400
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-15 16:26:37 -0400
+Processing by LotsController#open_orders as HTML
+  [1m[36mLot Load (0.4ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mWindow Load (0.2ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 23ms (Views: 20.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-15 16:26:37 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-15 16:26:37 -0400
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-15 16:26:37 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-15 16:26:37 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-15 16:26:37 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-15 16:26:37 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-15 16:26:37 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-15 16:26:37 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-15 16:26:37 -0400
+
+
+Started GET "/assets/tree-bg.jpg" for 127.0.0.1 at 2014-10-15 16:26:38 -0400
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-15 16:29:40 -0400
+Processing by LotsController#open_orders as HTML
+  [1m[35mLot Load (0.3ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL[0m
+  [1m[35mTree Load (0.1ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mType Load (0.2ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mWindow Load (0.1ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 19ms (Views: 16.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-15 16:29:41 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-15 16:29:41 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-15 16:29:41 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-15 16:29:41 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-15 16:29:41 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-15 16:29:41 -0400
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-15 16:29:41 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-15 16:29:41 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-15 16:29:41 -0400
+
+
+Started GET "/assets/tree-bg.jpg" for 127.0.0.1 at 2014-10-15 16:29:41 -0400
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-15 16:30:09 -0400
+Processing by LotsController#open_orders as HTML
+  [1m[36mLot Load (0.5ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mOrder Load (0.2ms)[0m  SELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mType Load (0.1ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mWindow Load (0.1ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-15 16:30:09 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-15 16:30:10 -0400
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-15 16:30:10 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-15 16:30:10 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-15 16:30:10 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-15 16:30:10 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-15 16:30:10 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-15 16:30:10 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-15 16:30:10 -0400
+
+
+Started GET "/assets/tree-bg.jpg" for 127.0.0.1 at 2014-10-15 16:30:10 -0400
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-15 16:32:29 -0400
+Processing by LotsController#open_orders as HTML
+  [1m[35mLot Load (0.3ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL[0m
+  [1m[35mTree Load (0.2ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mType Load (0.1ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mWindow Load (0.2ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-15 16:32:29 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-15 16:32:29 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-15 16:32:29 -0400
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-15 16:32:29 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-15 16:32:29 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-15 16:32:29 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-15 16:32:29 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-15 16:32:29 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-15 16:32:29 -0400
+
+
+Started GET "/assets/tree-bg.jpg" for 127.0.0.1 at 2014-10-15 16:32:29 -0400
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-10-16 11:04:57 -0400
+Processing by LotsController#open_orders as HTML
+  [1m[36mLot Load (10.4ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mOrder Load (0.6ms)[0m  SELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL
+  [1m[36mTree Load (1.1ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mType Load (0.3ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mWindow Load (0.2ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered lots/open_orders.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 48ms (Views: 31.6ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-16 11:04:58 -0400
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-16 11:04:58 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-16 11:04:58 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-16 11:04:58 -0400
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-10-16 11:04:58 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-16 11:04:58 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-16 11:04:58 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-16 11:04:58 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-16 11:04:58 -0400
+
+
+Started GET "/assets/tree-bg.jpg" for 127.0.0.1 at 2014-10-16 11:04:58 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2014-10-16 11:05:32 -0400
+Processing by OrdersController#index as HTML
+  Rendered orders/index.html.erb within layouts/application (50.8ms)
+  [1m[35mLot Load (0.4ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+Completed 200 OK in 57ms (Views: 55.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/orders/zipcode_search?utf8=%E2%9C%93&zipcode_search%5Bzipcode%5D=02145&commit=Submit" for 127.0.0.1 at 2014-10-16 11:06:04 -0400
+Processing by OrdersController#zipcode_search as HTML
+  Parameters: {"utf8"=>"✓", "zipcode_search"=>{"zipcode"=>"02145"}, "commit"=>"Submit"}
+  [1m[36m (1.7ms)[0m  [1mSELECT COUNT(*) FROM "zips"  WHERE "zips"."code" = '02145'[0m
+Redirected to http://localhost:3000/orders/new?zip=02145
+Completed 302 Found in 17ms (ActiveRecord: 11.5ms)
+
+
+Started GET "/orders/new?zip=02145" for 127.0.0.1 at 2014-10-16 11:06:04 -0400
+Processing by OrdersController#new as HTML
+  Parameters: {"zip"=>"02145"}
+  [1m[35mZip Load (0.2ms)[0m  SELECT "zips".* FROM "zips"  WHERE "zips"."code" = '02145'
+  [1m[36mLot Load (0.4ms)[0m  [1mSELECT "lots".* FROM "lots"  WHERE "lots"."id" IN (1)[0m
+  [1m[35mAvailableTree Load (0.6ms)[0m  SELECT "available_trees".* FROM "available_trees"  WHERE "available_trees"."lot_id" = $1  [["lot_id", 1]]
+  [1m[36mTree Load (1.3ms)[0m  [1mSELECT "trees".* FROM "trees"  WHERE "trees"."id" IN (11, 12, 4, 2, 3)[0m
+  [1m[35mType Load (0.3ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mType Load (0.1ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mWindow Load (0.3ms)[0m  [1mSELECT  "windows".* FROM "windows"   ORDER BY "windows"."id" ASC LIMIT 1[0m
+  [1m[35mWindow Load (0.1ms)[0m  SELECT "windows".* FROM "windows"
+  Rendered orders/new.html.erb within layouts/application (17.2ms)
+  [1m[36mLot Load (0.3ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+Completed 200 OK in 74ms (Views: 21.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-10-16 11:06:04 -0400
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-10-16 11:06:04 -0400
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-10-16 11:06:04 -0400
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-10-16 11:06:04 -0400
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-10-16 11:06:04 -0400
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-10-16 11:06:04 -0400
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-10-16 11:06:04 -0400
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-10-16 11:06:04 -0400
+
+
+Started GET "/assets/fraser.jpg" for 127.0.0.1 at 2014-10-16 11:06:04 -0400

@@ -18,6 +18,11 @@
   display: none;
 }
 
+.trees-bg {
+  background: url('tree-bg.jpg') no-repeat center top;
+  background-size: 100% 500px;
+}
+
 .tree-display {
   height: 125px;
   position: relative;
