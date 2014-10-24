@@ -22,8 +22,7 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li><a href="#about">Tree Varieties</a></li>
-          <li><a href="#contact">How It Works</a></li>
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <% if current_lot.present? %>
@@ -31,7 +30,6 @@
             <li><%= link_to 'Logout', destroy_lot_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'Sign In', new_lot_session_path %></li>
-            <li><%= link_to 'Sign Up', new_lot_registration_path %></li>
           <% end %>
         </ul>
       </div>
@@ -39,15 +37,24 @@
   </div>
   <p>&nbsp;</p>
   <p>&nbsp;</p>
-  <div class="container">
-    <% if flash[:notice] %>
-      <div class="alert alert-success">
-        <%= flash[:notice] %>
-      </div>
-    <% end %>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <% if flash[:notice] %>
+          <div class="alert alert-success">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
 
-    <%= yield %>
+        <%= yield %>
+      </div>
+    </div>
   </div>
 
+  <script>
+    var top_row = 160 + $('#top-row').height();
+    var css = '100% ' + top_row + 'px';
+    $('.trees-bg').css('background-size', css);
+  </script>
 </body>
 </html>

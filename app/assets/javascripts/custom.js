@@ -12,5 +12,5 @@ $(document).ready(function(){
     $('#tree-display').removeClass('fraser');
     $('#tree-display').addClass(type);
     $('#tree-icon').text(' '+text[0]+'ft. '+text[2]);
-  })
+  });
 });
