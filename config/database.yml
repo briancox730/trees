@@ -81,5 +81,4 @@ test:
 production:
   <<: *default
   database: trees_production
-  username: trees
   password: <%= ENV['TREES_DATABASE_PASSWORD'] %>
