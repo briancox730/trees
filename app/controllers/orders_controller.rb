@@ -77,6 +77,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:tree_id, :name, :email, :address, :city, :state, :zipcode, :lot_id)
+    params.require(:order).permit(:tree_id, :name, :email, :address, :city, :state, :zipcode, :lot_id, :window_id)
   end
 end

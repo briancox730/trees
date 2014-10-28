@@ -3,7 +3,7 @@
     <div class="page-header">
       <h1><%= @lot.name %> <small>Tree's for all</small></h1>
     </div>
-    <div class='panel panel-primary'>
+    <div class='panel panel-tree'>
       <div class="panel-heading">Your Orders</div>
       <div class='panel-body'>
         <% if @orders.empty? %>
@@ -46,7 +46,7 @@
               <% end %>
             </table>
           </div>
-          <%= link_to 'Claim more orders!', open_orders_lots_path, class: 'btn btn-primary' %>
+          <%= link_to 'Claim more orders!', open_orders_lots_path, class: 'btn btn-success' %>
         <% end %>
       </div>
     </div>
@@ -55,7 +55,7 @@
 
 <div class='row'>
   <div class='col-md-8'>
-    <div class='panel panel-primary'>
+    <div class='panel panel-tree'>
       <div class="panel-heading">Available Trees</div>
       <div class='panel-body'>
         <div style='overflow: auto; max-height: 500px;'>
@@ -115,7 +115,7 @@
   </div>
 
   <div class='col-md-4'>
-    <div class='panel panel-primary'>
+    <div class='panel panel-tree'>
       <div class="panel-heading">Zipcodes served</div>
       <div class='panel-body'>
         <% if @delivery_zipcodes.empty? %>

@@ -1,85 +1,93 @@
- <div class="row" id='top-row'>
-  <div class="col-md-3">
-  </div>
-  <div class="col-md-6 well">
-    <h1>Trees to your door</h1>
-    <br>
-    <%= simple_form_for @order do |f| %>
-      <%= f.error_notification %>
-
-      <div class="form-inputs">
-        <%= f.input :tree_id,
-                    required: true,
-                    collection: @available_trees,
-                    selected: @available_trees.first,
-                    label: false,
-                    input_html: { class: 'form-control'} %>
-                    <br>
-        <div class="tree-display display-none" id="tree-display">
-          <div class="tree-icons">
-            <i class="fa fa-tree fa-3x" id="tree-icon"></i>
-          </div>
-        </div>
+<div class="container">
+   <div class="row" id='top-row'>
+    <div class="col-md-3 hidden-sm hidden-xs">
+    </div>
+    <div class="col-md-6 col-sm-12 col-xs-12">
+      <div class="well">
+        <h1>Trees to your door</h1>
         <br>
-        <%= f.input :name,
-                    required: true,
-                    label: false,
-                    placeholder: 'Full Name',
-                    input_html: { class: 'form-control'} %>
-                    <br>
-        <%= f.input :email,
-                    required: true,
-                    label: false,
-                    placeholder: 'Email',
-                    input_html: { class: 'form-control'} %>
-                    <br>
-        <%= f.input :address,
-                    required: true,
-                    label: false,
-                    placeholder: 'Address',
-                    input_html: { class: 'form-control'} %>
-                    <br>
-        <div class="row">
-          <div class="col-xs-6">
-            <%= f.input :city,
-                        required: true,
-                        label: false,
-                        placeholder: 'City',
-                        input_html: { class: 'form-control'} %>
-                        <br>
-          </div>
-          <div class="col-xs-2">
-            <%= f.input :state,
-                        required: true,
-                        label: false,
-                        placeholder: 'State',
-                        input_html: { class: 'form-control'} %>
-                        <br>
-          </div>
-          <div class="col-xs-4">
-            <%= f.input :zipcode,
-                        disabled: true,
-                        required: true,
-                        label: false,
-                        input_html: { class: 'form-control', value: @zip} %>
-                        <br>
-          </div>
-        </div>
-        <%= f.input :window_id,
-                    required: true,
-                    label: false,
-                    collection: @windows,
-                    selected: @windows.first,
-                    label_method: :delivery_window,
-                    input_html: { class: 'form-control'} %>
-                    <br>
-      </div>
+        <%= simple_form_for @order do |f| %>
+          <%= f.error_notification %>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Order!", class: "btn btn-lg btn-block btn-success" %>
+          <div class="form-inputs">
+            <%= f.input :tree_id,
+                        required: true,
+                        collection: @available_trees,
+                        selected: @available_trees.first,
+                        label: false,
+                        input_html: { class: 'form-control'} %>
+                        <br>
+            <div class="tree-display display-none" id="tree-display">
+              <div class="tree-icons">
+                <i class="fa fa-tree fa-3x" id="tree-icon"></i>
+              </div>
+            </div>
+            <br>
+            <%= f.input :name,
+                        required: true,
+                        label: false,
+                        placeholder: 'Full Name',
+                        input_html: { class: 'form-control'} %>
+                        <br>
+            <%= f.input :email,
+                        required: true,
+                        label: false,
+                        placeholder: 'Email',
+                        input_html: { class: 'form-control'} %>
+                        <br>
+            <%= f.input :address,
+                        required: true,
+                        label: false,
+                        placeholder: 'Address',
+                        input_html: { class: 'form-control'} %>
+                        <br>
+            <div class="row">
+              <div class="col-md-6 col-sm-5 col-xs-5">
+                <%= f.input :city,
+                            required: true,
+                            label: false,
+                            placeholder: 'City',
+                            input_html: { class: 'form-control'} %>
+                            <br>
+              </div>
+              <div class="col-md-2 col-sm-3 col-xs-3">
+                <%= f.input :state,
+                            required: true,
+                            label: false,
+                            placeholder: 'State',
+                            input_html: { class: 'form-control'} %>
+                            <br>
+              </div>
+              <div class="col-md-4 col-sm-4 col-xs-4">
+                <%= f.input :zipcode,
+                            required: true,
+                            readonly: true,
+                            label: false,
+                            input_html: { class: 'form-control', value: @zip} %>
+                            <br>
+              </div>
+            </div>
+            <%= f.input :window_id,
+                        required: true,
+                        label: false,
+                        collection: @windows,
+                        selected: @windows.first,
+                        label_method: :delivery_window,
+                        input_html: { class: 'form-control'} %>
+                        <br>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit, "Order!", class: "btn btn-lg btn-block btn-success" %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+      <br>
+    </div>
+    <div class="col-md-3 hidden-sm hidden-xs">
+    </div>
   </div>
-  <div class="col-md-3">
-  </div>
+  <%= render "onetwothree" %>
 </div>
+
+<%= render "balsam_fraser" %>

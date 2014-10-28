@@ -70,10 +70,39 @@
   color: #FFF;
 }
 
+.tree-description {
+  width: 100%;
+  color: #fff;
+  padding: 1px 10px 0 10px;
+}
+
+.padding {
+  padding: 20px;
+}
+
+.light-green {
+  color: #79aa37;
+}
+
 .green {
-  color: #5f8d2b;
+  color: #3b6013;
 }
 
 .white {
   color: #ffffff;
+}
+
+.background-green {
+  border-top: 1px solid #79aa37;
+  background-color: #48721c;
+}
+
+.panel-tree {
+  border-color: #3b6013;
+}
+
+.panel-tree>.panel-heading {
+  color: #fff;
+  background-color: #3b6013;
+  border-color: #3b6013;
 }
