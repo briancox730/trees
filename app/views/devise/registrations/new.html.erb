@@ -1,60 +1,62 @@
-<div class="row" id="top-row">
-  <div class="hidden-sm col-md-4">
-  </div>
-  <div class="col-sm-12 col-md-4">
-    <h2>Sign Up</h2>
+<div class="container">
+  <div class="row" id="top-row">
+    <div class="hidden-sm col-md-4">
+    </div>
+    <div class="col-sm-12 col-md-4 well">
+      <h2>Sign Up</h2>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= f.error_notification %>
 
-      <div class="form-inputs">
+        <div class="form-inputs">
 
-        <%= f.input :name,
-                    required: true,
-                    placeholder: 'Business Name',
-                    autofocus: true,
-                    label: false,
-                    input_html: { class: 'form-control'} %>
-                    <br>
-        <%= f.input :first_name,
-                    required: true,
-                    label: false,
-                    placeholder: 'First name',
-                    input_html: { class: 'form-control'} %>
-                    <br>
-        <%= f.input :last_name,
-                    required: true,
-                    label: false,
-                    placeholder: 'Last name',
-                    input_html: { class: 'form-control'} %>
-                    <br>
-        <%= f.input :email,
-                    required: true,
-                    label: false,
-                    placeholder: 'Email',
-                    input_html: { class: 'form-control'} %>
-                    <br>
-        <%= f.input :password,
-                    required: true,
-                    label: false,
-                    placeholder: 'Password',
-                    input_html: { class: 'form-control'} %>
-                    <br>
-        <%= f.input :password_confirmation,
-                    required: true,
-                    label: false,
-                    placeholder: 'Password Confirmation',
-                    input_html: { class: 'form-control'} %>
-                    <br>
-      </div>
+          <%= f.input :name,
+                      required: true,
+                      placeholder: 'Business Name',
+                      autofocus: true,
+                      label: false,
+                      input_html: { class: 'form-control'} %>
+                      <br>
+          <%= f.input :first_name,
+                      required: true,
+                      label: false,
+                      placeholder: 'First name',
+                      input_html: { class: 'form-control'} %>
+                      <br>
+          <%= f.input :last_name,
+                      required: true,
+                      label: false,
+                      placeholder: 'Last name',
+                      input_html: { class: 'form-control'} %>
+                      <br>
+          <%= f.input :email,
+                      required: true,
+                      label: false,
+                      placeholder: 'Email',
+                      input_html: { class: 'form-control'} %>
+                      <br>
+          <%= f.input :password,
+                      required: true,
+                      label: false,
+                      placeholder: 'Password',
+                      input_html: { class: 'form-control'} %>
+                      <br>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      label: false,
+                      placeholder: 'Password Confirmation',
+                      input_html: { class: 'form-control'} %>
+                      <br>
+        </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: "btn btn-lg btn-block" %>
-      </div>
-    <% end %>
-    <br>
-    <%= render "devise/shared/links" %>
-  </div>
-  <div class="hidden-sm col-md-4">
+        <div class="form-actions">
+          <%= f.button :submit, "Sign up", class: "btn btn-lg btn-block btn-success" %>
+        </div>
+      <% end %>
+      <br>
+      <%= render "devise/shared/links" %>
+    </div>
+    <div class="hidden-sm col-md-4">
+    </div>
   </div>
 </div>
