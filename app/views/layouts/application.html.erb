@@ -88,6 +88,9 @@
   <script>
     var top_row = 180 + $('#top-row').height();
     var css = '100% ' + top_row + 'px';
+    if (top_row < 450) {
+      css = '100% 450px';
+    };
     $('.trees-bg').css('background-size', css);
   </script>
 </body>
