@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141015180814) do
+ActiveRecord::Schema.define(version: 20141029195551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20141015180814) do
 
   create_table "trees", force: true do |t|
     t.integer "height",  null: false
-    t.integer "price",   null: false
+    t.float   "price",   null: false
     t.integer "type_id"
   end
 

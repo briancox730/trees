@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
     if @order.save
       redirect_to order_confirmation_orders_path(id: @order.id)
     else
-      flash[:notice] = "Order could not be processed!"
+      flash[:now] = "Order could not be processed!"
       render :new
     end
   end

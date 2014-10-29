@@ -72,7 +72,7 @@
                 <td><%= index + 1 %></td>
                 <td><%= tree.type.name %></td>
                 <td><%= tree.height %></td>
-                <td><%= "$" + (tree.price / 100.00).to_s %></td>
+                <td><%= "$" + tree.price.to_s %></td>
                 <% if @available_trees.map(&:tree_id).include?(tree.id) %>
                   <td class="text-right">
                     <%= simple_form_for @new_tree do |f| %>
