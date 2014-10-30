@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
       @state = @geo.state
       @city = @geo.city
     end
-    @available_trees = Order.available_trees(@zip)
+    @available_trees, @trees = Order.available_trees(@zip)
     @order = Order.new
     @windows = Window.all
   end

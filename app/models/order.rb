@@ -26,6 +26,6 @@ class Order < ActiveRecord::Base
     trees.each do |t|
       available_trees << ["#{t.height} ft. #{t.type.name}", t.id]
     end
-    available_trees
+    return available_trees, trees
   end
 end
