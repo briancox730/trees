@@ -43,20 +43,38 @@
                         <br>
             <div class="row">
               <div class="col-md-6 col-sm-5 col-xs-5">
-                <%= f.input :city,
-                            required: true,
-                            label: false,
-                            placeholder: 'City',
-                            input_html: { class: 'form-control'} %>
-                            <br>
+                  <% if @city.nil? %>
+                    <%= f.input :city,
+                                required: true,
+                                label: false,
+                                placeholder: 'City',
+                                input_html: { class: 'form-control'} %>
+                                <br>
+                  <% else %>
+                    <%= f.input :city,
+                                required: true,
+                                label: false,
+                                readonly: true,
+                                input_html: { class: 'form-control', value: @city} %>
+                                <br>
+                  <% end %>
               </div>
               <div class="col-md-2 col-sm-3 col-xs-3">
-                <%= f.input :state,
-                            required: true,
-                            label: false,
-                            placeholder: 'State',
-                            input_html: { class: 'form-control'} %>
-                            <br>
+                  <% if @state.nil? %>
+                    <%= f.input :state,
+                                required: true,
+                                label: false,
+                                placeholder: 'State',
+                                input_html: { class: 'form-control'} %>
+                                <br>
+                  <% else %>
+                    <%= f.input :state,
+                                required: true,
+                                label: false,
+                                readonly: true,
+                                input_html: { class: 'form-control', value: @state} %>
+                                <br>
+                  <% end %>
               </div>
               <div class="col-md-4 col-sm-4 col-xs-4">
                 <%= f.input :zipcode,

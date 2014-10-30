@@ -3,6 +3,11 @@ class OrdersController < ApplicationController
 
   def new
     @zip = params[:zip]
+    @geo = Geokit::Geocoders::MultiGeocoder.geocode(@zip)
+    if @geo.success
+      @state = @geo.state
+      @city = @geo.city
+    end
     @available_trees = Order.available_trees(@zip)
     @order = Order.new
     @windows = Window.all
@@ -65,8 +70,15 @@ class OrdersController < ApplicationController
   def zipcode_search
     @zip = params[:zipcode_search][:zipcode]
 
-    @lots = Zip.where(code: @zip)
-    if @lots.size > 0
+    @count = 0
+
+    @zips = Zip.where(code: @zip).includes(:lot)
+
+    @zips.each do |zip|
+      @count += zip.lot.available_trees.count
+    end
+
+    if @zips.size > 0 && @count > 0
       redirect_to new_order_path(zip: @zip)
     else
       flash[:notice] = "Sorry we dont have any trees in that area!"

@@ -27,6 +27,7 @@ gem 'spring',        group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'geokit-rails'
 
 group :production, :staging do
   gem 'unicorn', '4.6.3' # rack http server
