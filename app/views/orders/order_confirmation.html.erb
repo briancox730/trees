@@ -6,7 +6,7 @@
       <br>
       <div class="tree-display <%= @order.tree.type.name.downcase %>" id="tree-display">
         <div class="tree-icons">
-          <i class="fa fa-tree fa-3x" id="tree-icon"><%= @order.tree.height.to_s + " ft. " + @order.tree.type.name %></i>
+          <i class="fa fa-tree fa-3x" id="tree-icon"><%= @order.tree.height.to_s + " ft. " + @order.tree.type.name + "-" + @order.tree.price%></i>
         </div>
       </div>
 
