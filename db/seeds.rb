@@ -1,6 +1,7 @@
 Type.delete_all
 Tree.delete_all
 Window.delete_all
+AvailableTree.delete_all
 
 type1 = Type.create(name: "Fraser Fir")
 type2 = Type.create(name: "Balsam Fir")
