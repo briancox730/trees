@@ -59008,3 +59008,793 @@ Started GET "/assets/balsam.jpg" for 127.0.0.1 at 2014-11-05 09:11:30 -0500
 
 
 Started GET "/assets/fraser.jpg" for 127.0.0.1 at 2014-11-05 09:11:30 -0500
+
+
+Started GET "/orders/zipcode_search?utf8=%E2%9C%93&zipcode_search%5Bzipcode%5D=01970&commit=Submit" for 127.0.0.1 at 2014-11-05 09:37:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by OrdersController#zipcode_search as HTML
+  Parameters: {"utf8"=>"✓", "zipcode_search"=>{"zipcode"=>"01970"}, "commit"=>"Submit"}
+Geokit is using the domain: localhost
+  [1m[35mZip Load (1.1ms)[0m  SELECT "zips".* FROM "zips"  WHERE "zips"."code" = '01970'
+  [1m[36mLot Load (1.1ms)[0m  [1mSELECT "lots".* FROM "lots"  WHERE "lots"."id" IN (1)[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "available_trees"  WHERE "available_trees"."lot_id" = $1  [["lot_id", 1]]
+Redirected to http://localhost:3000/orders/new?zip=01970
+Completed 302 Found in 83ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/orders/new?zip=01970" for 127.0.0.1 at 2014-11-05 09:37:44 -0500
+Processing by OrdersController#new as HTML
+  Parameters: {"zip"=>"01970"}
+Geokit is using the domain: localhost
+Multi geocoding. address: 01970, args []
+Google geocoding. address: 01970, args []
+Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2201970%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2201970%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Salem%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Salem%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Essex+County%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Essex+County%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_2%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Massachusetts%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22MA%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22United+States%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22US%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Salem%2C+MA+01970%2C+USA%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.5473541%2C%0A++++++++++++++++++%22lng%22+%3A+-70.85833599999999%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.48213579999999%2C%0A++++++++++++++++++%22lng%22+%3A+-70.94991689999999%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+42.5235097%2C%0A+++++++++++++++%22lng%22+%3A+-70.89523369999999%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.5473541%2C%0A++++++++++++++++++%22lng%22+%3A+-70.85833599999999%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.48213579999999%2C%0A++++++++++++++++++%22lng%22+%3A+-70.94991689999999%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++%7D%0A+++%5D%2C%0A+++%22status%22+%3A+%22OK%22%0A%7D%0A
+  [1m[36mZip Load (0.3ms)[0m  [1mSELECT "zips".* FROM "zips"  WHERE "zips"."code" = '01970'[0m
+  [1m[35mLot Load (0.4ms)[0m  SELECT "lots".* FROM "lots"  WHERE "lots"."id" IN (1)
+  [1m[36mAvailableTree Load (0.2ms)[0m  [1mSELECT "available_trees".* FROM "available_trees"  WHERE "available_trees"."lot_id" = $1[0m  [["lot_id", 1]]
+  [1m[35mTree Load (0.8ms)[0m  SELECT "trees".* FROM "trees"  WHERE "trees"."id" IN (18, 19, 22, 23, 24, 26)
+  [1m[36mType Load (0.6ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mWindow Load (0.6ms)[0m  [1mSELECT  "windows".* FROM "windows"   ORDER BY "windows"."id" ASC LIMIT 1[0m
+  [1m[35mWindow Load (0.1ms)[0m  SELECT "windows".* FROM "windows"
+  Rendered orders/_onetwothree.html.erb (0.3ms)
+  [1m[36mTree Load (0.3ms)[0m  [1mSELECT "trees".* FROM "trees"[0m
+  [1m[35mType Load (0.3ms)[0m  SELECT "types".* FROM "types"  WHERE "types"."id" IN (2, 1)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "trees".* FROM "trees"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "types".* FROM "types"  WHERE "types"."id" IN (2, 1)
+  Rendered orders/_balsam_fraser.html.erb (3.4ms)
+  Rendered orders/_footer.html.erb (0.2ms)
+  Rendered orders/new.html.erb within layouts/application (110.9ms)
+Completed 200 OK in 341ms (Views: 181.8ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-05 09:37:45 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-05 09:37:45 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:37:45 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:37:45 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:37:45 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:37:45 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-05 09:37:45 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-05 09:37:45 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:37:45 -0500
+
+
+Started POST "/orders" for 127.0.0.1 at 2014-11-05 09:39:34 -0500
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bPPQ/t0deLVPrPIhIas2Ybg2yUZ+s/cLDqk0rHmlLXA=", "order"=>{"tree_id"=>"18", "name"=>"Brian", "email"=>"bcox@gmail.com", "address"=>"8 maple", "city"=>"Salem", "state"=>"MA", "zipcode"=>"01970", "window_id"=>"2"}, "commit"=>"Order!"}
+Geokit is using the domain: localhost
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.8ms)[0m  INSERT INTO "orders" ("address", "city", "created_at", "email", "name", "state", "tree_id", "updated_at", "window_id", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["address", "8 maple"], ["city", "Salem"], ["created_at", "2014-11-05 14:39:34.303619"], ["email", "bcox@gmail.com"], ["name", "Brian"], ["state", "MA"], ["tree_id", 18], ["updated_at", "2014-11-05 14:39:34.303619"], ["window_id", 2], ["zipcode", "01970"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/orders/order_confirmation?id=11
+Completed 302 Found in 7ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/orders/order_confirmation?id=11" for 127.0.0.1 at 2014-11-05 09:39:34 -0500
+Processing by OrdersController#order_confirmation as HTML
+  Parameters: {"id"=>"11"}
+Geokit is using the domain: localhost
+  [1m[35mOrder Load (0.5ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mTree Load (0.3ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mType Load (0.3ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered orders/order_confirmation.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (no implicit conversion of Float into String):
+     6:       <br>
+     7:       <div class="tree-display <%= @order.tree.type.name.downcase %>" id="tree-display">
+     8:         <div class="tree-icons">
+     9:           <i class="fa fa-tree fa-3x" id="tree-icon"><%= @order.tree.height.to_s + " ft. " + @order.tree.type.name + "-" + @order.tree.price%></i>
+    10:         </div>
+    11:       </div>
+    12: 
+  app/views/orders/order_confirmation.html.erb:9:in `+'
+  app/views/orders/order_confirmation.html.erb:9:in `_app_views_orders_order_confirmation_html_erb___4320913361594512866_70144706474760'
+
+
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.9ms)
+
+
+Started GET "/orders/order_confirmation?id=11" for 127.0.0.1 at 2014-11-05 09:40:07 -0500
+Processing by OrdersController#order_confirmation as HTML
+  Parameters: {"id"=>"11"}
+Geokit is using the domain: localhost
+  [1m[36mOrder Load (0.4ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35mTree Load (0.2ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mType Load (0.2ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered orders/_footer.html.erb (0.0ms)
+  Rendered orders/order_confirmation.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-05 09:40:07 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:40:07 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-05 09:40:07 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:40:07 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:40:07 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:40:07 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-05 09:40:07 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-05 09:40:07 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:40:07 -0500
+
+
+Started GET "/orders/order_confirmation?id=11" for 127.0.0.1 at 2014-11-05 09:40:34 -0500
+Processing by OrdersController#order_confirmation as HTML
+  Parameters: {"id"=>"11"}
+Geokit is using the domain: localhost
+  [1m[35mOrder Load (0.8ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = $1 LIMIT 1  [["id", 11]]
+  Rendered orders/order_confirmation.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 5ms
+
+SyntaxError (/Users/briancox730/code/brian/trees/app/views/orders/order_confirmation.html.erb:34: syntax error, unexpected '<', expecting ')'
+</div>
+ ^
+/Users/briancox730/code/brian/trees/app/views/orders/order_confirmation.html.erb:34: unterminated regexp meets end of file):
+  actionview (4.1.1) lib/action_view/template.rb:297:in `module_eval'
+  actionview (4.1.1) lib/action_view/template.rb:297:in `compile'
+  actionview (4.1.1) lib/action_view/template.rb:245:in `block (2 levels) in compile!'
+  activesupport (4.1.1) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:244:in `block in compile!'
+  actionview (4.1.1) lib/action_view/template.rb:232:in `synchronize'
+  actionview (4.1.1) lib/action_view/template.rb:232:in `compile!'
+  actionview (4.1.1) lib/action_view/template.rb:144:in `block in render'
+  activesupport (4.1.1) lib/active_support/notifications.rb:161:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:339:in `instrument'
+  actionview (4.1.1) lib/action_view/template.rb:143:in `render'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:55:in `block (2 levels) in render_template'
+  actionview (4.1.1) lib/action_view/renderer/abstract_renderer.rb:38:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `instrument'
+  actionview (4.1.1) lib/action_view/renderer/abstract_renderer.rb:38:in `instrument'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:54:in `block in render_template'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:62:in `render_with_layout'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:53:in `render_template'
+  actionview (4.1.1) lib/action_view/renderer/template_renderer.rb:17:in `render'
+  actionview (4.1.1) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.1) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.1) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.1) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.1) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.1) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.1) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.1) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/briancox730/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/benchmark.rb:296:in `realtime'
+  activesupport (4.1.1) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.1) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.1) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.1) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.1) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.1) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:149:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:149:in `block in halting_and_conditional'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.1) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.1) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.1) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.1) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.1) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.1) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.1) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.1) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.1) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.1.1) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.1) lib/action_controller/metal.rb:231:in `block in action'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:80:in `call'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:80:in `dispatch'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:48:in `call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:71:in `block in call'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.1) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.1) lib/action_dispatch/routing/route_set.rb:676:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.1) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.1) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.1) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.1) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/briancox730/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/briancox730/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/briancox730/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (37.0ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (50.3ms)
+
+
+Started GET "/orders/order_confirmation?id=11" for 127.0.0.1 at 2014-11-05 09:40:43 -0500
+Processing by OrdersController#order_confirmation as HTML
+  Parameters: {"id"=>"11"}
+Geokit is using the domain: localhost
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35mTree Load (0.2ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mType Load (0.2ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered orders/_onetwothree.html.erb (0.0ms)
+  Rendered orders/_footer.html.erb (0.0ms)
+  Rendered orders/order_confirmation.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-05 09:40:43 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:40:43 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:40:43 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-05 09:40:43 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:40:43 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:40:43 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-05 09:40:43 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-05 09:40:43 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:40:43 -0500
+
+
+Started GET "/orders/order_confirmation?id=11" for 127.0.0.1 at 2014-11-05 09:42:28 -0500
+Processing by OrdersController#order_confirmation as HTML
+  Parameters: {"id"=>"11"}
+Geokit is using the domain: localhost
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered orders/_onetwothree.html.erb (0.0ms)
+  Rendered orders/_footer.html.erb (0.0ms)
+  Rendered orders/order_confirmation.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 10ms (Views: 7.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-05 09:42:28 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:42:28 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-05 09:42:28 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:28 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:28 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:28 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:28 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:28 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:28 -0500
+
+
+Started GET "/orders/order_confirmation?id=11" for 127.0.0.1 at 2014-11-05 09:42:54 -0500
+Processing by OrdersController#order_confirmation as HTML
+  Parameters: {"id"=>"11"}
+Geokit is using the domain: localhost
+  [1m[36mOrder Load (0.3ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35mTree Load (0.2ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mType Load (0.1ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered orders/_onetwothree.html.erb (0.0ms)
+  Rendered orders/_footer.html.erb (0.0ms)
+  Rendered orders/order_confirmation.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-05 09:42:54 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:54 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:54 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-05 09:42:54 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:42:54 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:54 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:54 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:54 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:54 -0500
+
+
+Started GET "/orders/order_confirmation?id=11" for 127.0.0.1 at 2014-11-05 09:42:55 -0500
+Processing by OrdersController#order_confirmation as HTML
+  Parameters: {"id"=>"11"}
+Geokit is using the domain: localhost
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mType Load (0.1ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered orders/_onetwothree.html.erb (0.0ms)
+  Rendered orders/_footer.html.erb (0.0ms)
+  Rendered orders/order_confirmation.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-05 09:42:55 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-05 09:42:55 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:55 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:42:55 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:55 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:55 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:55 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:55 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:55 -0500
+
+
+Started GET "/orders/order_confirmation?id=11" for 127.0.0.1 at 2014-11-05 09:42:59 -0500
+Processing by OrdersController#order_confirmation as HTML
+  Parameters: {"id"=>"11"}
+Geokit is using the domain: localhost
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 11]]
+  [1m[35mTree Load (0.2ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mType Load (0.1ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered orders/_onetwothree.html.erb (0.0ms)
+  Rendered orders/_footer.html.erb (0.0ms)
+  Rendered orders/order_confirmation.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-05 09:42:59 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-05 09:42:59 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:59 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:59 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:59 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:42:59 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:59 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:59 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:42:59 -0500
+
+
+Started GET "/orders/order_confirmation?id=11" for 127.0.0.1 at 2014-11-05 09:43:13 -0500
+Processing by OrdersController#order_confirmation as HTML
+  Parameters: {"id"=>"11"}
+Geokit is using the domain: localhost
+  [1m[35mOrder Load (0.3ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = $1 LIMIT 1  [["id", 11]]
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mType Load (0.1ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered orders/_onetwothree.html.erb (0.1ms)
+  Rendered orders/_footer.html.erb (0.0ms)
+  Rendered orders/order_confirmation.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 38ms (Views: 7.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-05 09:43:13 -0500
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-05 09:43:13 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:13 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:13 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:13 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:43:13 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:13 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:13 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:13 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-05 09:43:15 -0500
+Processing by OrdersController#index as HTML
+Geokit is using the domain: localhost
+  Rendered orders/_onetwothree.html.erb (0.3ms)
+  [1m[36mTree Load (0.3ms)[0m  [1mSELECT "trees".* FROM "trees"[0m
+  [1m[35mType Load (0.3ms)[0m  SELECT "types".* FROM "types"  WHERE "types"."id" IN (2, 1)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "trees".* FROM "trees"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "types".* FROM "types"  WHERE "types"."id" IN (2, 1)
+  Rendered orders/_balsam_fraser.html.erb (3.4ms)
+  Rendered orders/_footer.html.erb (0.2ms)
+  Rendered orders/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/orders/zipcode_search?utf8=%E2%9C%93&zipcode_search%5Bzipcode%5D=02145&commit=Submit" for 127.0.0.1 at 2014-11-05 09:43:20 -0500
+Processing by OrdersController#zipcode_search as HTML
+  Parameters: {"utf8"=>"✓", "zipcode_search"=>{"zipcode"=>"02145"}, "commit"=>"Submit"}
+Geokit is using the domain: localhost
+  [1m[36mZip Load (0.2ms)[0m  [1mSELECT "zips".* FROM "zips"  WHERE "zips"."code" = '02145'[0m
+  [1m[35mLot Load (0.3ms)[0m  SELECT "lots".* FROM "lots"  WHERE "lots"."id" IN (1)
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "available_trees"  WHERE "available_trees"."lot_id" = $1[0m  [["lot_id", 1]]
+Redirected to http://localhost:3000/orders/new?zip=02145
+Completed 302 Found in 4ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/orders/new?zip=02145" for 127.0.0.1 at 2014-11-05 09:43:20 -0500
+Processing by OrdersController#new as HTML
+  Parameters: {"zip"=>"02145"}
+Geokit is using the domain: localhost
+Multi geocoding. address: 02145, args []
+Google geocoding. address: 02145, args []
+Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2202145%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2202145%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Somerville%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Somerville%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Massachusetts%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22MA%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22United+States%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22US%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Somerville%2C+MA+02145%2C+USA%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.404066%2C%0A++++++++++++++++++%22lng%22+%3A+-71.074904%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3803179%2C%0A++++++++++++++++++%22lng%22+%3A+-71.11142099999999%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+42.3930959%2C%0A+++++++++++++++%22lng%22+%3A+-71.08840359999999%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.404066%2C%0A++++++++++++++++++%22lng%22+%3A+-71.074904%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3803179%2C%0A++++++++++++++++++%22lng%22+%3A+-71.11142099999999%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++%7D%0A+++%5D%2C%0A+++%22status%22+%3A+%22OK%22%0A%7D%0A
+  [1m[35mZip Load (0.3ms)[0m  SELECT "zips".* FROM "zips"  WHERE "zips"."code" = '02145'
+  [1m[36mLot Load (0.3ms)[0m  [1mSELECT "lots".* FROM "lots"  WHERE "lots"."id" IN (1)[0m
+  [1m[35mAvailableTree Load (0.2ms)[0m  SELECT "available_trees".* FROM "available_trees"  WHERE "available_trees"."lot_id" = $1  [["lot_id", 1]]
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT "trees".* FROM "trees"  WHERE "trees"."id" IN (18, 19, 22, 23, 24, 26)[0m
+  [1m[35mType Load (0.1ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mType Load (0.1ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mWindow Load (0.3ms)[0m  SELECT  "windows".* FROM "windows"   ORDER BY "windows"."id" ASC LIMIT 1
+  [1m[36mWindow Load (0.2ms)[0m  [1mSELECT "windows".* FROM "windows"[0m
+  Rendered orders/_onetwothree.html.erb (0.0ms)
+  [1m[35mTree Load (0.5ms)[0m  SELECT "trees".* FROM "trees"
+  [1m[36mType Load (0.3ms)[0m  [1mSELECT "types".* FROM "types"  WHERE "types"."id" IN (2, 1)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "trees".* FROM "trees"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "types".* FROM "types"  WHERE "types"."id" IN (2, 1)[0m
+  Rendered orders/_balsam_fraser.html.erb (4.0ms)
+  Rendered orders/_footer.html.erb (0.0ms)
+  Rendered orders/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 160ms (Views: 17.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-05 09:43:21 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:21 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-05 09:43:21 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:21 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:21 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:43:21 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:21 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:21 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:21 -0500
+
+
+Started POST "/orders" for 127.0.0.1 at 2014-11-05 09:43:33 -0500
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bPPQ/t0deLVPrPIhIas2Ybg2yUZ+s/cLDqk0rHmlLXA=", "order"=>{"tree_id"=>"18", "name"=>"B", "email"=>"b@gmail.com", "address"=>"89 maple", "city"=>"Somerville", "state"=>"MA", "zipcode"=>"02145", "window_id"=>"2"}, "commit"=>"Order!"}
+Geokit is using the domain: localhost
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "orders" ("address", "city", "created_at", "email", "name", "state", "tree_id", "updated_at", "window_id", "zipcode") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["address", "89 maple"], ["city", "Somerville"], ["created_at", "2014-11-05 14:43:33.530705"], ["email", "b@gmail.com"], ["name", "B"], ["state", "MA"], ["tree_id", 18], ["updated_at", "2014-11-05 14:43:33.530705"], ["window_id", 2], ["zipcode", "02145"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/orders/order_confirmation?id=12
+Completed 302 Found in 4ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/orders/order_confirmation?id=12" for 127.0.0.1 at 2014-11-05 09:43:33 -0500
+Processing by OrdersController#order_confirmation as HTML
+  Parameters: {"id"=>"12"}
+Geokit is using the domain: localhost
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mTree Load (0.2ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mType Load (0.1ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered orders/_onetwothree.html.erb (0.0ms)
+  Rendered orders/_footer.html.erb (0.0ms)
+  Rendered orders/order_confirmation.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-05 09:43:33 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:43:33 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:33 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:33 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:33 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-05 09:43:33 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:33 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:33 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:43:33 -0500
+
+
+Started GET "/orders/order_confirmation?id=12" for 127.0.0.1 at 2014-11-05 09:44:23 -0500
+Processing by OrdersController#order_confirmation as HTML
+  Parameters: {"id"=>"12"}
+Geokit is using the domain: localhost
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered orders/_onetwothree.html.erb (0.1ms)
+  Rendered orders/_footer.html.erb (0.0ms)
+  Rendered orders/order_confirmation.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-05 09:44:23 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-05 09:44:23 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:44:23 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:44:23 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:44:23 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:44:23 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-05 09:44:23 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-05 09:44:23 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:44:23 -0500
+
+
+Started GET "/orders/order_confirmation?id=12" for 127.0.0.1 at 2014-11-05 09:44:35 -0500
+Processing by OrdersController#order_confirmation as HTML
+  Parameters: {"id"=>"12"}
+Geokit is using the domain: localhost
+  [1m[36mOrder Load (0.2ms)[0m  [1mSELECT  "orders".* FROM "orders"  WHERE "orders"."id" = $1 LIMIT 1[0m  [["id", 12]]
+  [1m[35mTree Load (0.1ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mType Load (0.2ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered orders/_onetwothree.html.erb (0.1ms)
+  Rendered orders/_footer.html.erb (0.0ms)
+  Rendered orders/order_confirmation.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-05 09:44:35 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-05 09:44:35 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:44:35 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:44:35 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:44:35 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:44:35 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-05 09:44:35 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-05 09:44:35 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:44:35 -0500
+
+
+Started GET "/orders/order_confirmation?id=12" for 127.0.0.1 at 2014-11-05 09:45:00 -0500
+Processing by OrdersController#order_confirmation as HTML
+  Parameters: {"id"=>"12"}
+Geokit is using the domain: localhost
+  [1m[35mOrder Load (0.2ms)[0m  SELECT  "orders".* FROM "orders"  WHERE "orders"."id" = $1 LIMIT 1  [["id", 12]]
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mType Load (0.1ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered orders/_onetwothree.html.erb (0.0ms)
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT "trees".* FROM "trees"[0m
+  [1m[35mType Load (0.2ms)[0m  SELECT "types".* FROM "types"  WHERE "types"."id" IN (2, 1)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "trees".* FROM "trees"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "types".* FROM "types"  WHERE "types"."id" IN (2, 1)
+  Rendered orders/_balsam_fraser.html.erb (2.7ms)
+  Rendered orders/_footer.html.erb (0.0ms)
+  Rendered orders/order_confirmation.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-05 09:45:00 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-05 09:45:00 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-05 09:45:00 -0500
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-05 09:45:00 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-05 09:45:00 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-05 09:45:00 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-05 09:45:00 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-05 09:45:00 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-05 09:45:00 -0500
