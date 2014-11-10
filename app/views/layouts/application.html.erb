@@ -9,54 +9,56 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="trees-bg">
-  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <%= link_to root_path, class: 'navbar-brand' do %>
-          <i class="fa fa-tree"> Christmas Tree Guys</i>
-        <% end %>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <% if current_lot.present? %>
-            <li><%= link_to current_lot.name, lot_path(current_lot) %></li>
-            <li><%= link_to 'Edit Trees', trees_path %></li>
-            <li><%= link_to 'Edit Accessories', accessories_path %>
-            <li><%= link_to 'Logout', destroy_lot_session_path, method: :delete %></li>
-          <% else %>
-            <li><%= link_to 'Sign In', new_lot_session_path %></li>
+  <div class='page-wrap'>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= link_to root_path, class: 'navbar-brand' do %>
+            <i class="fa fa-tree"> Christmas Tree Guys</i>
           <% end %>
-        </ul>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <% if current_lot.present? %>
+              <li><%= link_to current_lot.name, lot_path(current_lot) %></li>
+              <li><%= link_to 'Edit Trees', trees_path %></li>
+              <li><%= link_to 'Edit Accessories', accessories_path %>
+              <li><%= link_to 'Logout', destroy_lot_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to 'Sign In', new_lot_session_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <% if flash[:notice] %>
+            <div class="alert alert-success">
+              <%= flash[:notice] %>
+            </div>
+          <% end %>
+
+          <%= yield %>
+
+        </div>
       </div>
     </div>
   </div>
-  <p>&nbsp;</p>
-  <p>&nbsp;</p>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12">
-        <% if flash[:notice] %>
-          <div class="alert alert-success">
-            <%= flash[:notice] %>
-          </div>
-        <% end %>
 
-        <%= yield %>
-
-        <%= render partial: 'layouts/footer' %>
-
-      </div>
-    </div>
-  </div>
+  <%= render partial: 'layouts/footer' %>
 
   <script>
     var top_row = 180 + $('#top-row').height();
