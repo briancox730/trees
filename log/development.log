@@ -64069,3 +64069,211 @@ Geokit is using the domain: localhost
   Rendered accessories/index.html.erb within layouts/application (6.1ms)
   Rendered layouts/_footer.html.erb (0.0ms)
 Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/trees" for 127.0.0.1 at 2014-11-10 11:48:50 -0500
+Processing by TreesController#index as HTML
+Geokit is using the domain: localhost
+  [1m[35mLot Load (0.3ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36mTree Load (0.3ms)[0m  [1mSELECT "trees".* FROM "trees"[0m
+  [1m[35mType Load (0.2ms)[0m  SELECT "types".* FROM "types"  WHERE "types"."id" IN (1, 2)
+  [1m[36mType Load (0.2ms)[0m  [1mSELECT "types".* FROM "types"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "types".* FROM "types"
+  Rendered trees/index.html.erb within layouts/application (14.1ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/lots/1" for 127.0.0.1 at 2014-11-10 11:48:51 -0500
+Processing by LotsController#show as HTML
+  Parameters: {"id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mLot Load (0.4ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mLot Load (0.3ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "orders"  WHERE "orders"."lot_id" = 1 AND "orders"."delivered" = 'f'[0m
+  [1m[35mTree Load (0.2ms)[0m  SELECT "trees".* FROM "trees"
+  [1m[36mType Load (0.2ms)[0m  [1mSELECT "types".* FROM "types"  WHERE "types"."id" IN (1, 2)[0m
+  [1m[35mAvailableTree Load (0.2ms)[0m  SELECT "available_trees".* FROM "available_trees"  WHERE "available_trees"."lot_id" = $1  [["lot_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "zips"  WHERE "zips"."lot_id" = 1[0m
+  [1m[35mZip Load (0.2ms)[0m  SELECT "zips".* FROM "zips"  WHERE "zips"."lot_id" = 1
+  Rendered lots/show.html.erb within layouts/application (65.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 74ms (Views: 69.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/accessories" for 127.0.0.1 at 2014-11-10 11:48:53 -0500
+Processing by AccessoriesController#index as HTML
+Geokit is using the domain: localhost
+  [1m[36mLot Load (0.4ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mAccessory Load (0.2ms)[0m  SELECT "accessories".* FROM "accessories"
+  Rendered accessories/index.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/lots/1" for 127.0.0.1 at 2014-11-10 11:48:54 -0500
+Processing by LotsController#show as HTML
+  Parameters: {"id"=>"1"}
+Geokit is using the domain: localhost
+  [1m[36mLot Load (0.4ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mLot Load (0.2ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "orders"  WHERE "orders"."lot_id" = 1 AND "orders"."delivered" = 'f'[0m
+  [1m[35mTree Load (0.2ms)[0m  SELECT "trees".* FROM "trees"
+  [1m[36mType Load (0.2ms)[0m  [1mSELECT "types".* FROM "types"  WHERE "types"."id" IN (1, 2)[0m
+  [1m[35mAvailableTree Load (0.2ms)[0m  SELECT "available_trees".* FROM "available_trees"  WHERE "available_trees"."lot_id" = $1  [["lot_id", 1]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "zips"  WHERE "zips"."lot_id" = 1[0m
+  [1m[35mZip Load (0.2ms)[0m  SELECT "zips".* FROM "zips"  WHERE "zips"."lot_id" = 1
+  Rendered lots/show.html.erb within layouts/application (21.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 29ms (Views: 25.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/lots/open_orders" for 127.0.0.1 at 2014-11-10 11:48:55 -0500
+Processing by LotsController#open_orders as HTML
+Geokit is using the domain: localhost
+  [1m[36mLot Load (0.4ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mOrder Load (0.4ms)[0m  SELECT "orders".* FROM "orders"  WHERE "orders"."lot_id" IS NULL
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mWindow Load (0.2ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT  "trees".* FROM "trees"  WHERE "trees"."id" = $1 LIMIT 1[0m  [["id", 19]]
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "windows".* FROM "windows"  WHERE "windows"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered lots/open_orders.html.erb within layouts/application (8.7ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 17ms (Views: 13.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/accessories" for 127.0.0.1 at 2014-11-10 11:49:25 -0500
+Processing by AccessoriesController#index as HTML
+Geokit is using the domain: localhost
+  [1m[35mLot Load (0.4ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36mAccessory Load (0.2ms)[0m  [1mSELECT "accessories".* FROM "accessories"[0m
+  Rendered accessories/index.html.erb within layouts/application (6.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/accessories" for 127.0.0.1 at 2014-11-10 11:51:22 -0500
+Processing by AccessoriesController#index as HTML
+Geokit is using the domain: localhost
+  [1m[35mLot Load (0.3ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36mAccessory Load (0.2ms)[0m  [1mSELECT "accessories".* FROM "accessories"[0m
+  Rendered accessories/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"accessories", :id=>nil} missing required keys: [:id]):
+    28:                 </td>
+    29:               </tr>
+    30:             <% end %>
+    31:             <%= simple_form_for @new_accessory, url: accessory_path(@new_accessory) do |f| %>
+    32:               <tr>
+    33:                 <td>New</td>
+    34:                 <td>
+  app/views/accessories/index.html.erb:31:in `_app_views_accessories_index_html_erb___982087848762783912_70308504400500'
+
+
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (12.4ms)
+
+
+Started GET "/accessories" for 127.0.0.1 at 2014-11-10 11:52:16 -0500
+Processing by AccessoriesController#index as HTML
+Geokit is using the domain: localhost
+  [1m[35mLot Load (0.4ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36mAccessory Load (0.3ms)[0m  [1mSELECT "accessories".* FROM "accessories"[0m
+  Rendered accessories/index.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 12.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-10 11:52:16 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 11:52:16 -0500
+
+
+Started GET "/assets/jquery.autosize.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:16 -0500
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:16 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-10 11:52:16 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:16 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:16 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:16 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:16 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:16 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:16 -0500
+
+
+Started POST "/accessories" for 127.0.0.1 at 2014-11-10 11:52:22 -0500
+Processing by AccessoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iRzni08gqXQ6+PmJL5o1T7t/7W/iHJTpW7Uio3op9kU=", "accessory"=>{"name"=>"Kissing Ball", "description"=>" A great addition to any festive decoration balls are created from premium balsam cuttings", "price"=>"29.99"}, "commit"=>"Create Accessory"}
+Geokit is using the domain: localhost
+  [1m[35mLot Load (0.3ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "accessories" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", "2014-11-10 16:52:22.954872"], ["description", " A great addition to any festive decoration balls are created from premium balsam cuttings"], ["name", "Kissing Ball"], ["price", 29.99], ["updated_at", "2014-11-10 16:52:22.954872"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/accessories
+Completed 302 Found in 5ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/accessories" for 127.0.0.1 at 2014-11-10 11:52:22 -0500
+Processing by AccessoriesController#index as HTML
+Geokit is using the domain: localhost
+  [1m[35mLot Load (0.3ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36mAccessory Load (0.2ms)[0m  [1mSELECT "accessories".* FROM "accessories"[0m
+  Rendered accessories/index.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-10 11:52:23 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-10 11:52:23 -0500
+
+
+Started GET "/assets/jquery.autosize.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:23 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:23 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-10 11:52:23 -0500
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:23 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:23 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:23 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:23 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:23 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-10 11:52:23 -0500
