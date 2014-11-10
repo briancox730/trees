@@ -2,60 +2,58 @@
   <div class='col-md-12'>
     <br>
     <div class='panel panel-tree'>
-      <div class="panel-heading">Trees</div>
+      <div class="panel-heading">Accessories</div>
       <div class='panel-body'>
         <div>
           <table class="table">
             <thead>
               <tr>
                 <th></th>
-                <th>Type (click to edit)</th>
-                <th>Height (click to edit)</th>
+                <th>Name (click to edit)</th>
+                <th>Description (click to edit)</th>
                 <th>Price (click to edit)</th>
                 <th class="text-right">Remove?</th>
               </tr>
             </thead>
-            <% @trees.each_with_index do |tree, index| %>
+            <% @accessories.each_with_index do |a, index| %>
               <tr>
-                <td><%= index + 1 %></td>
-                <td><%= best_in_place tree, :type_id, as: :select, collection: Hash[@types.collect {|t| [t.id, t.name]}] %></td>
-                <td><%= best_in_place tree, :height, as: :input %></td>
-                <td>$<%= best_in_place tree, :price, as: :input %></td>
+                <td><%=  index + 1 %></td>
+                <td><%= best_in_place a, :name, url: accessory_path(id: a.id), as: :input %></td>
+                <td><%= best_in_place a, :description, url: accessory_path(id: a.id), as: :textarea %></td>
+                <td>$<%= best_in_place a, :price, url: accessory_path(id: a.id), as: :input %></td>
                 <td class="text-right">
-                  <%= link_to tree_path(tree), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' do %>
+                  <%= link_to accessory_path(a), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' do %>
                     <i class="fa fa-trash-o "></i>
                   <% end %>
                 </td>
               </tr>
             <% end %>
-            <%= simple_form_for @new_tree do |f| %>
+            <%= simple_form_for @new_accessory do |f| %>
               <tr>
                 <td>New</td>
                 <td>
-                  <%= f.input :type_id,
+                  <%= f.input :name,
                               label: false,
-                              collection: Type.all,
                               required: true,
-                              prompt: 'Type',
-                              label_method: lambda {|p| p.name },
+                              placeholder: 'Name',
                               input_html: { class: 'form-control'} %>
                 </td>
                 <td>
-                  <%= f.input :height,
+                  <%= f.input :description,
                               label: false,
-                              placeholder: 'Height',
+                              placeholder: 'Description',
                               required: true,
                               input_html: { class: 'form-control'} %>
                 </td>
                 <td>
                   <%= f.input :price,
                               label: false,
-                              placeholder: 'Price',
+                              placeholder: 'Price (29.99)',
                               required: true,
                               input_html: { class: 'form-control'} %>
                 </td>
                 <td class="text-right">
-                  <%= f.submit 'Create Tree', class: 'btn btn-success' %>
+                  <%= f.submit 'Create Accessory', class: 'btn btn-success' %>
                 </td>
               </tr>
             <% end %>

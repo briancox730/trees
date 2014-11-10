@@ -1,6 +1,9 @@
 class TreesController < ApplicationController
+  before_action :authenticate_lot!
+
   def index
     @trees = Tree.all.includes(:type)
+    @types = Type.all
     @new_tree = Tree.new
   end
 
@@ -16,6 +19,18 @@ class TreesController < ApplicationController
     else
       flash[:notice] = "Tree could not be added"
       redirect_to trees_path
+    end
+  end
+
+  def update
+    @tree = Tree.find(params[:id])
+
+    respond_to do |format|
+      if @tree.update_attributes(tree_params)
+        format.json { respond_with_bip(@tree) }
+      else
+        format.json { respond_with_bip(@tree) }
+      end
     end
   end
 

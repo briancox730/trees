@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+  $('.best_in_place').best_in_place();
+
   function tree_dropdown() {
     var text = $('#order_tree_id :selected').text().split(' ');
     var tree_id = $('#order_tree_id :selected').val();

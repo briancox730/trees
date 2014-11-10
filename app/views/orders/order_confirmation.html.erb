@@ -2,42 +2,33 @@
   <div class="col-md-3">
   </div>
   <div class='col-md-6'>
-    <div class="panel">
+    <div class="panel panel-success">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= @order.name %></h3>
+      </div>
       <div class="panel-body">
-        <br>
+
         <div class="tree-display <%= @order.tree.type.name.downcase %>" id="tree-display">
           <div class="tree-icons">
             <i class="fa fa-tree fa-3x" id="tree-icon"><%= @order.tree.height.to_s + " ft. " + @order.tree.type.name %></i>
           </div>
         </div>
-
         <br>
 
-        <div class="panel panel-success">
-          <div class="panel-heading">
-            <h3 class="panel-title"><%= @order.name %></h3>
-          </div>
-          <div class="panel-body">
-            Address: <%= @order.address %>
-            <br>
-            City, State, Zipcode: <%= @order.city + ", " + @order.state + ", " + @order.zipcode %>
-            <br>
-            Total: <%= @order.tree.price %>
-          </div>
-        </div>
+        Address: <%= @order.address %>
+        <br>
+        City, State, Zipcode: <%= @order.city + ", " + @order.state + ", " + @order.zipcode %>
+        <br>
+        Total: <%= @order.tree.price %>
       </div>
     </div>
-    <br>
     <br>
   </div>
 
   <div class="col-md-3">
   </div>
-
-  <%= render 'onetwothree' %>
-
 </div>
 
-<%= render 'balsam_fraser' %>
+<%= render 'onetwothree' %>
 
-<%= render "footer" %>
+<%= render 'balsam_fraser' %>

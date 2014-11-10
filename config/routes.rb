@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   devise_for :lots
   root 'orders#index'
+
   resources :lots do
     collection do
       get 'open_orders'
     end
   end
+  resources :accessories
   resources :zips
   resources :trees
   resources :available_trees
