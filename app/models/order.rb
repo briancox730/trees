@@ -1,6 +1,7 @@
 class Order < ActiveRecord::Base
   belongs_to :tree
   belongs_to :window
+  has_many :accessory_orders
 
   validates_presence_of :tree_id
   validates_presence_of :name

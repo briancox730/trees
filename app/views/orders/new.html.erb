@@ -88,6 +88,11 @@
                             <br>
               </div>
             </div>
+            <%= f.input :accessory_orders,
+                        multiple: true,
+                        collection: Accessory.all,
+                        as: :check_boxes %>
+                        <br>
             <%= f.input :window_id,
                         required: true,
                         label: false,
@@ -95,6 +100,11 @@
                         selected: @windows.first,
                         label_method: :delivery_window,
                         input_html: { class: 'form-control'} %>
+                        <br>
+            <%= f.input :instructions,
+                        placeholder: 'Special Delivery Instructions',
+                        label: false,
+                        input_html: { class: 'form-control' } %>
                         <br>
           </div>
 

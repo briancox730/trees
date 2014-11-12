@@ -64982,3 +64982,439 @@ ActionController::RoutingError (No route matches [GET] "/admin/ad_metrics/demand
   Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.4ms)
   Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.0ms)
   Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (38.3ms)
+
+
+Started GET "/orders/zipcode_search?utf8=%E2%9C%93&zipcode_search%5Bzipcode%5D=02145&commit=Submit" for 127.0.0.1 at 2014-11-12 15:07:48 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by OrdersController#zipcode_search as HTML
+  Parameters: {"utf8"=>"✓", "zipcode_search"=>{"zipcode"=>"02145"}, "commit"=>"Submit"}
+Geokit is using the domain: localhost
+  [1m[35mZip Load (1.5ms)[0m  SELECT "zips".* FROM "zips"  WHERE "zips"."code" = '02145'
+  [1m[36mLot Load (1.2ms)[0m  [1mSELECT "lots".* FROM "lots"  WHERE "lots"."id" IN (1)[0m
+  [1m[35m (1.3ms)[0m  SELECT COUNT(*) FROM "available_trees"  WHERE "available_trees"."lot_id" = $1  [["lot_id", 1]]
+Redirected to http://localhost:3000/orders/new?zip=02145
+Completed 302 Found in 97ms (ActiveRecord: 10.3ms)
+
+
+Started GET "/orders/new?zip=02145" for 127.0.0.1 at 2014-11-12 15:07:48 -0500
+Processing by OrdersController#new as HTML
+  Parameters: {"zip"=>"02145"}
+Geokit is using the domain: localhost
+Multi geocoding. address: 02145, args []
+Google geocoding. address: 02145, args []
+Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2202145%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2202145%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Somerville%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Somerville%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Massachusetts%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22MA%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22United+States%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22US%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Somerville%2C+MA+02145%2C+USA%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.404066%2C%0A++++++++++++++++++%22lng%22+%3A+-71.074904%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3803179%2C%0A++++++++++++++++++%22lng%22+%3A+-71.11142099999999%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+42.3930959%2C%0A+++++++++++++++%22lng%22+%3A+-71.08840359999999%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.404066%2C%0A++++++++++++++++++%22lng%22+%3A+-71.074904%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3803179%2C%0A++++++++++++++++++%22lng%22+%3A+-71.11142099999999%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++%7D%0A+++%5D%2C%0A+++%22status%22+%3A+%22OK%22%0A%7D%0A
+  [1m[36mZip Load (0.4ms)[0m  [1mSELECT "zips".* FROM "zips"  WHERE "zips"."code" = '02145'[0m
+  [1m[35mLot Load (0.5ms)[0m  SELECT "lots".* FROM "lots"  WHERE "lots"."id" IN (1)
+  [1m[36mAvailableTree Load (0.3ms)[0m  [1mSELECT "available_trees".* FROM "available_trees"  WHERE "available_trees"."lot_id" = $1[0m  [["lot_id", 1]]
+  [1m[35mTree Load (1.2ms)[0m  SELECT "trees".* FROM "trees"  WHERE "trees"."id" IN (18, 19, 22, 23, 24, 26)
+  [1m[36mType Load (1.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mType Load (0.3ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mAccessory Load (1.0ms)[0m  [1mSELECT "accessories".* FROM "accessories"[0m
+  Rendered orders/new.html.erb within layouts/application (144.3ms)
+Completed 500 Internal Server Error in 326ms
+
+ActionView::Template::Error (undefined method `accessories' for #<Order:0x007fc8642d2290>):
+    88:                             <br>
+    89:               </div>
+    90:             </div>
+    91:             <%= f.input :accessories,
+    92:                         multiple: true,
+    93:                         collection: Accessory.all,
+    94:                         as: :check_boxes %>
+  app/views/orders/new.html.erb:91:in `block in _app_views_orders_new_html_erb___2745295961801743688_70249325615160'
+  app/views/orders/new.html.erb:12:in `_app_views_orders_new_html_erb___2745295961801743688_70249325615160'
+
+
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.0ms)
+
+
+Started GET "/orders/new?zip=02145" for 127.0.0.1 at 2014-11-12 15:41:06 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by OrdersController#new as HTML
+  Parameters: {"zip"=>"02145"}
+Geokit is using the domain: localhost
+Multi geocoding. address: 02145, args []
+Google geocoding. address: 02145, args []
+Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2202145%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2202145%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Somerville%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Somerville%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Massachusetts%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22MA%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22United+States%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22US%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Somerville%2C+MA+02145%2C+USA%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.404066%2C%0A++++++++++++++++++%22lng%22+%3A+-71.074904%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3803179%2C%0A++++++++++++++++++%22lng%22+%3A+-71.11142099999999%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+42.3930959%2C%0A+++++++++++++++%22lng%22+%3A+-71.08840359999999%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.404066%2C%0A++++++++++++++++++%22lng%22+%3A+-71.074904%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3803179%2C%0A++++++++++++++++++%22lng%22+%3A+-71.11142099999999%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++%7D%0A+++%5D%2C%0A+++%22status%22+%3A+%22OK%22%0A%7D%0A
+  [1m[35mZip Load (1.2ms)[0m  SELECT "zips".* FROM "zips"  WHERE "zips"."code" = '02145'
+  [1m[36mLot Load (1.4ms)[0m  [1mSELECT "lots".* FROM "lots"  WHERE "lots"."id" IN (1)[0m
+  [1m[35mAvailableTree Load (0.6ms)[0m  SELECT "available_trees".* FROM "available_trees"  WHERE "available_trees"."lot_id" = $1  [["lot_id", 1]]
+  [1m[36mTree Load (1.0ms)[0m  [1mSELECT "trees".* FROM "trees"  WHERE "trees"."id" IN (18, 19, 22, 23, 24, 26)[0m
+  [1m[35mType Load (0.7ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccessory Load (1.0ms)[0m  SELECT "accessories".* FROM "accessories"
+  Rendered orders/new.html.erb within layouts/application (130.7ms)
+Completed 500 Internal Server Error in 391ms
+
+ActionView::Template::Error (undefined method `accessories' for #<Order:0x007fc4f08cb1c8>):
+    88:                             <br>
+    89:               </div>
+    90:             </div>
+    91:             <%= f.input :accessories,
+    92:                         multiple: true,
+    93:                         collection: Accessory.all,
+    94:                         as: :check_boxes %>
+  app/views/orders/new.html.erb:91:in `block in _app_views_orders_new_html_erb___1871103505674571033_70241913264860'
+  app/views/orders/new.html.erb:12:in `_app_views_orders_new_html_erb___1871103505674571033_70241913264860'
+
+
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (14.9ms)
+
+
+Started GET "/orders/new?zip=02145" for 127.0.0.1 at 2014-11-12 15:41:50 -0500
+Processing by OrdersController#new as HTML
+  Parameters: {"zip"=>"02145"}
+Geokit is using the domain: localhost
+Multi geocoding. address: 02145, args []
+Google geocoding. address: 02145, args []
+Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2202145%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2202145%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Somerville%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Somerville%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Massachusetts%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22MA%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22United+States%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22US%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Somerville%2C+MA+02145%2C+USA%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.404066%2C%0A++++++++++++++++++%22lng%22+%3A+-71.074904%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3803179%2C%0A++++++++++++++++++%22lng%22+%3A+-71.11142099999999%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+42.3930959%2C%0A+++++++++++++++%22lng%22+%3A+-71.08840359999999%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.404066%2C%0A++++++++++++++++++%22lng%22+%3A+-71.074904%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3803179%2C%0A++++++++++++++++++%22lng%22+%3A+-71.11142099999999%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++%7D%0A+++%5D%2C%0A+++%22status%22+%3A+%22OK%22%0A%7D%0A
+  [1m[36mZip Load (0.3ms)[0m  [1mSELECT "zips".* FROM "zips"  WHERE "zips"."code" = '02145'[0m
+  [1m[35mLot Load (0.3ms)[0m  SELECT "lots".* FROM "lots"  WHERE "lots"."id" IN (1)
+  [1m[36mAvailableTree Load (0.2ms)[0m  [1mSELECT "available_trees".* FROM "available_trees"  WHERE "available_trees"."lot_id" = $1[0m  [["lot_id", 1]]
+  [1m[35mTree Load (0.3ms)[0m  SELECT "trees".* FROM "trees"  WHERE "trees"."id" IN (18, 19, 22, 23, 24, 26)
+  [1m[36mType Load (0.2ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mType Load (0.3ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mAccessory Load (0.4ms)[0m  [1mSELECT "accessories".* FROM "accessories"[0m
+  [1m[35mWindow Load (1.0ms)[0m  SELECT  "windows".* FROM "windows"   ORDER BY "windows"."id" ASC LIMIT 1
+  [1m[36mWindow Load (0.2ms)[0m  [1mSELECT "windows".* FROM "windows"[0m
+  Rendered orders/_onetwothree.html.erb (0.4ms)
+  [1m[35mTree Load (0.3ms)[0m  SELECT "trees".* FROM "trees"
+  [1m[36mType Load (0.4ms)[0m  [1mSELECT "types".* FROM "types"  WHERE "types"."id" IN (1, 2)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "trees".* FROM "trees"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "types".* FROM "types"  WHERE "types"."id" IN (1, 2)[0m
+  Rendered orders/_balsam_fraser.html.erb (8.9ms)
+  Rendered orders/new.html.erb within layouts/application (60.4ms)
+  [1m[35mLot Load (0.5ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 383ms (Views: 210.2ms | ActiveRecord: 20.8ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-12 15:41:51 -0500
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-12 15:41:51 -0500
+
+
+Started GET "/assets/jquery.autosize.js?body=1" for 127.0.0.1 at 2014-11-12 15:41:51 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-12 15:41:51 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-12 15:41:51 -0500
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-11-12 15:41:51 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-12 15:41:51 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-12 15:41:51 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-12 15:41:51 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-12 15:41:51 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-12 15:41:51 -0500
+
+
+Started GET "/assets/tree-bg.jpg" for 127.0.0.1 at 2014-11-12 15:41:51 -0500
+
+
+Started GET "/assets/balsam.jpg" for 127.0.0.1 at 2014-11-12 15:41:51 -0500
+
+
+Started GET "/assets/fraser.jpg" for 127.0.0.1 at 2014-11-12 15:41:51 -0500
+
+
+Started GET "/admin/ad_metrics/ad_hoc_report?utf8=%E2%9C%93&admin%5Bstart_date%5D=2014-7-25&admin%5Bend_date%5D=2014-8-25&admin%5Btime_breakdown%5D=day&admin%5Bpublisher%5D%5B%5D=&admin%5Bzones%5D%5B%5D=&admin%5Badvertisers%5D%5B%5D=&admin%5Bad_templates%5D%5B%5D=&admin%5Bads%5D%5B%5D=&admin%5Brow_select%5D%5B%5D=publisher&admin%5Bcolumn_select%5D%5B%5D=email_sends&admin%5Bcolumn_select%5D%5B%5D=email_opens&admin%5Bcolumn_select%5D%5B%5D=email_clicks&admin%5Bcolumn_select%5D%5B%5D=revenue&admin%5Bcolumn_select%5D%5B%5D=estimated_revenue&admin%5Bcolumn_select%5D%5B%5D=&commit=Apply+Filters" for 127.0.0.1 at 2014-11-12 15:50:47 -0500
+
+ActionController::RoutingError (No route matches [GET] "/admin/ad_metrics/ad_hoc_report"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/briancox730/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/briancox730/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/briancox730/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.1ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.2ms)
+
+
+Started GET "/orders/new?zip=02145" for 127.0.0.1 at 2014-11-12 16:10:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (2.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by OrdersController#new as HTML
+  Parameters: {"zip"=>"02145"}
+Geokit is using the domain: localhost
+Multi geocoding. address: 02145, args []
+Google geocoding. address: 02145, args []
+Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2202145%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2202145%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Somerville%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Somerville%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Massachusetts%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22MA%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22United+States%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22US%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Somerville%2C+MA+02145%2C+USA%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.404066%2C%0A++++++++++++++++++%22lng%22+%3A+-71.074904%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3803179%2C%0A++++++++++++++++++%22lng%22+%3A+-71.11142099999999%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+42.3930959%2C%0A+++++++++++++++%22lng%22+%3A+-71.08840359999999%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.404066%2C%0A++++++++++++++++++%22lng%22+%3A+-71.074904%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3803179%2C%0A++++++++++++++++++%22lng%22+%3A+-71.11142099999999%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++%7D%0A+++%5D%2C%0A+++%22status%22+%3A+%22OK%22%0A%7D%0A
+  [1m[35mZip Load (0.9ms)[0m  SELECT "zips".* FROM "zips"  WHERE "zips"."code" = '02145'
+  [1m[36mLot Load (1.6ms)[0m  [1mSELECT "lots".* FROM "lots"  WHERE "lots"."id" IN (1)[0m
+  [1m[35mAvailableTree Load (0.6ms)[0m  SELECT "available_trees".* FROM "available_trees"  WHERE "available_trees"."lot_id" = $1  [["lot_id", 1]]
+  [1m[36mTree Load (1.0ms)[0m  [1mSELECT "trees".* FROM "trees"  WHERE "trees"."id" IN (18, 19, 22, 23, 24, 26)[0m
+  [1m[35mType Load (0.8ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mType Load (0.3ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccessory Load (0.9ms)[0m  SELECT "accessories".* FROM "accessories"
+  [1m[36mWindow Load (0.8ms)[0m  [1mSELECT  "windows".* FROM "windows"   ORDER BY "windows"."id" ASC LIMIT 1[0m
+  [1m[35mWindow Load (0.1ms)[0m  SELECT "windows".* FROM "windows"
+  Rendered orders/_onetwothree.html.erb (0.5ms)
+  [1m[36mTree Load (0.3ms)[0m  [1mSELECT "trees".* FROM "trees"[0m
+  [1m[35mType Load (0.9ms)[0m  SELECT "types".* FROM "types"  WHERE "types"."id" IN (1, 2)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "trees".* FROM "trees"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "types".* FROM "types"  WHERE "types"."id" IN (1, 2)
+  Rendered orders/_balsam_fraser.html.erb (47.5ms)
+  Rendered orders/new.html.erb within layouts/application (183.3ms)
+  [1m[36mLot Load (0.5ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 582ms (Views: 297.5ms | ActiveRecord: 23.6ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-12 16:10:02 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:02 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-12 16:10:02 -0500
+
+
+Started GET "/assets/jquery.autosize.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:02 -0500
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:02 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-12 16:10:02 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:02 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:02 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:02 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:02 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:02 -0500
+
+
+Started GET "/assets/tree-bg.jpg" for 127.0.0.1 at 2014-11-12 16:10:02 -0500
+
+
+Started GET "/assets/balsam.jpg" for 127.0.0.1 at 2014-11-12 16:10:02 -0500
+
+
+Started GET "/assets/fraser.jpg" for 127.0.0.1 at 2014-11-12 16:10:02 -0500
+
+
+Started GET "/orders/new?zip=02145" for 127.0.0.1 at 2014-11-12 16:10:35 -0500
+Processing by OrdersController#new as HTML
+  Parameters: {"zip"=>"02145"}
+Geokit is using the domain: localhost
+Multi geocoding. address: 02145, args []
+Google geocoding. address: 02145, args []
+Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2202145%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2202145%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Somerville%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Somerville%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Massachusetts%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22MA%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22United+States%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22US%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Somerville%2C+MA+02145%2C+USA%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.404066%2C%0A++++++++++++++++++%22lng%22+%3A+-71.074904%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3803179%2C%0A++++++++++++++++++%22lng%22+%3A+-71.11142099999999%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+42.3930959%2C%0A+++++++++++++++%22lng%22+%3A+-71.08840359999999%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.404066%2C%0A++++++++++++++++++%22lng%22+%3A+-71.074904%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3803179%2C%0A++++++++++++++++++%22lng%22+%3A+-71.11142099999999%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++%7D%0A+++%5D%2C%0A+++%22status%22+%3A+%22OK%22%0A%7D%0A
+  [1m[35mZip Load (0.4ms)[0m  SELECT "zips".* FROM "zips"  WHERE "zips"."code" = '02145'
+  [1m[36mLot Load (0.3ms)[0m  [1mSELECT "lots".* FROM "lots"  WHERE "lots"."id" IN (1)[0m
+  [1m[35mAvailableTree Load (0.2ms)[0m  SELECT "available_trees".* FROM "available_trees"  WHERE "available_trees"."lot_id" = $1  [["lot_id", 1]]
+  [1m[36mTree Load (0.3ms)[0m  [1mSELECT "trees".* FROM "trees"  WHERE "trees"."id" IN (18, 19, 22, 23, 24, 26)[0m
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccessory Load (0.3ms)[0m  SELECT "accessories".* FROM "accessories"
+  [1m[36mWindow Load (0.5ms)[0m  [1mSELECT  "windows".* FROM "windows"   ORDER BY "windows"."id" ASC LIMIT 1[0m
+  [1m[35mWindow Load (0.4ms)[0m  SELECT "windows".* FROM "windows"
+  Rendered orders/_onetwothree.html.erb (0.0ms)
+  [1m[36mTree Load (0.3ms)[0m  [1mSELECT "trees".* FROM "trees"[0m
+  [1m[35mType Load (0.2ms)[0m  SELECT "types".* FROM "types"  WHERE "types"."id" IN (1, 2)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "trees".* FROM "trees"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "types".* FROM "types"  WHERE "types"."id" IN (1, 2)
+  Rendered orders/_balsam_fraser.html.erb (3.2ms)
+  Rendered orders/new.html.erb within layouts/application (62.3ms)
+  [1m[36mLot Load (0.3ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 198ms (Views: 66.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-12 16:10:35 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-12 16:10:35 -0500
+
+
+Started GET "/assets/jquery.autosize.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:35 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:35 -0500
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:35 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-12 16:10:35 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:35 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:35 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:35 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:35 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:35 -0500
+
+
+Started GET "/admin/ad_metrics/ad_hoc_report?utf8=%E2%9C%93&admin%5Bstart_date%5D=2014-7-25&admin%5Bend_date%5D=2014-8-25&admin%5Btime_breakdown%5D=day&admin%5Bpublisher%5D%5B%5D=&admin%5Bzones%5D%5B%5D=&admin%5Badvertisers%5D%5B%5D=&admin%5Bad_templates%5D%5B%5D=&admin%5Bads%5D%5B%5D=&admin%5Brow_select%5D%5B%5D=publisher&admin%5Bcolumn_select%5D%5B%5D=email_sends&admin%5Bcolumn_select%5D%5B%5D=email_opens&admin%5Bcolumn_select%5D%5B%5D=email_clicks&admin%5Bcolumn_select%5D%5B%5D=revenue&admin%5Bcolumn_select%5D%5B%5D=estimated_revenue&admin%5Bcolumn_select%5D%5B%5D=&commit=Apply+Filters" for 127.0.0.1 at 2014-11-12 16:10:51 -0500
+
+ActionController::RoutingError (No route matches [GET] "/admin/ad_metrics/ad_hoc_report"):
+  actionpack (4.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.1) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.1) lib/rails/engine.rb:514:in `call'
+  railties (4.1.1) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/briancox730/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/briancox730/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/briancox730/.rubies/ruby-2.0.0-p451/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (5.1ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /Users/briancox730/.gem/ruby/2.0.0/gems/actionpack-4.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (34.8ms)
+
+
+Started GET "/orders/new?zip=02145" for 127.0.0.1 at 2014-11-12 16:10:57 -0500
+Processing by OrdersController#new as HTML
+  Parameters: {"zip"=>"02145"}
+Geokit is using the domain: localhost
+Multi geocoding. address: 02145, args []
+Google geocoding. address: 02145, args []
+Google geocoding. Result: %7B%0A+++%22results%22+%3A+%5B%0A++++++%7B%0A+++++++++%22address_components%22+%3A+%5B%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%2202145%22%2C%0A+++++++++++++++%22short_name%22+%3A+%2202145%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Somerville%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22Somerville%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22locality%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22Massachusetts%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22MA%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22administrative_area_level_1%22%2C+%22political%22+%5D%0A++++++++++++%7D%2C%0A++++++++++++%7B%0A+++++++++++++++%22long_name%22+%3A+%22United+States%22%2C%0A+++++++++++++++%22short_name%22+%3A+%22US%22%2C%0A+++++++++++++++%22types%22+%3A+%5B+%22country%22%2C+%22political%22+%5D%0A++++++++++++%7D%0A+++++++++%5D%2C%0A+++++++++%22formatted_address%22+%3A+%22Somerville%2C+MA+02145%2C+USA%22%2C%0A+++++++++%22geometry%22+%3A+%7B%0A++++++++++++%22bounds%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.404066%2C%0A++++++++++++++++++%22lng%22+%3A+-71.074904%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3803179%2C%0A++++++++++++++++++%22lng%22+%3A+-71.11142099999999%0A+++++++++++++++%7D%0A++++++++++++%7D%2C%0A++++++++++++%22location%22+%3A+%7B%0A+++++++++++++++%22lat%22+%3A+42.3930959%2C%0A+++++++++++++++%22lng%22+%3A+-71.08840359999999%0A++++++++++++%7D%2C%0A++++++++++++%22location_type%22+%3A+%22APPROXIMATE%22%2C%0A++++++++++++%22viewport%22+%3A+%7B%0A+++++++++++++++%22northeast%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.404066%2C%0A++++++++++++++++++%22lng%22+%3A+-71.074904%0A+++++++++++++++%7D%2C%0A+++++++++++++++%22southwest%22+%3A+%7B%0A++++++++++++++++++%22lat%22+%3A+42.3803179%2C%0A++++++++++++++++++%22lng%22+%3A+-71.11142099999999%0A+++++++++++++++%7D%0A++++++++++++%7D%0A+++++++++%7D%2C%0A+++++++++%22types%22+%3A+%5B+%22postal_code%22+%5D%0A++++++%7D%0A+++%5D%2C%0A+++%22status%22+%3A+%22OK%22%0A%7D%0A
+  [1m[35mZip Load (0.4ms)[0m  SELECT "zips".* FROM "zips"  WHERE "zips"."code" = '02145'
+  [1m[36mLot Load (0.3ms)[0m  [1mSELECT "lots".* FROM "lots"  WHERE "lots"."id" IN (1)[0m
+  [1m[35mAvailableTree Load (0.2ms)[0m  SELECT "available_trees".* FROM "available_trees"  WHERE "available_trees"."lot_id" = $1  [["lot_id", 1]]
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT "trees".* FROM "trees"  WHERE "trees"."id" IN (18, 19, 22, 23, 24, 26)[0m
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mType Load (0.2ms)[0m  SELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "types".* FROM "types"  WHERE "types"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mAccessory Load (0.3ms)[0m  SELECT "accessories".* FROM "accessories"
+  [1m[36mWindow Load (0.2ms)[0m  [1mSELECT  "windows".* FROM "windows"   ORDER BY "windows"."id" ASC LIMIT 1[0m
+  [1m[35mWindow Load (0.1ms)[0m  SELECT "windows".* FROM "windows"
+  Rendered orders/_onetwothree.html.erb (0.0ms)
+  [1m[36mTree Load (0.2ms)[0m  [1mSELECT "trees".* FROM "trees"[0m
+  [1m[35mType Load (0.2ms)[0m  SELECT "types".* FROM "types"  WHERE "types"."id" IN (1, 2)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "trees".* FROM "trees"[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "types".* FROM "types"  WHERE "types"."id" IN (1, 2)
+  Rendered orders/_balsam_fraser.html.erb (2.6ms)
+  Rendered orders/new.html.erb within layouts/application (19.9ms)
+  [1m[36mLot Load (0.3ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 166ms (Views: 24.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-12 16:10:58 -0500
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-12 16:10:58 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:58 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-12 16:10:58 -0500
+
+
+Started GET "/assets/jquery.autosize.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:58 -0500
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:58 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:58 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:58 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:58 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:58 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-12 16:10:58 -0500
