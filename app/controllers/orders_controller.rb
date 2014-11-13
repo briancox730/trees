@@ -11,12 +11,14 @@ class OrdersController < ApplicationController
     @available_trees, @trees = Order.available_trees(@zip)
     @order = Order.new
     @windows = Window.all
+    @accessories = Accessory.all
   end
 
   def create
     @order = Order.new(order_params)
 
     if @order.save
+      Order.build_accessories(@order, params[:order][:accessory_orders])
       redirect_to order_confirmation_orders_path(id: @order.id)
     else
       flash[:now] = "Order could not be processed!"
@@ -26,6 +28,7 @@ class OrdersController < ApplicationController
 
   def order_confirmation
     @order = Order.find(params[:id])
+    @accessories = @order.accessories
   end
 
   def order_claim
@@ -89,6 +92,6 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:tree_id, :name, :email, :address, :city, :state, :zipcode, :lot_id, :window_id)
+    params.require(:order).permit(:tree_id, :name, :email, :address, :city, :state, :zipcode, :lot_id, :window_id, :accessory_orders, :instructions)
   end
 end

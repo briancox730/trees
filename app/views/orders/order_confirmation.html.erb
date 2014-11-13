@@ -14,13 +14,25 @@
           </div>
         </div>
         <br>
+        <h3>Deliver To:</h3>
+        <p class="tab"><%= @order.address %>
+        <br>
+        <%= @order.city + ", " + @order.state + ", " + @order.zipcode %>
+        <br>
+        <%= @order.tree.price %></p>
 
-        Address: <%= @order.address %>
-        <br>
-        City, State, Zipcode: <%= @order.city + ", " + @order.state + ", " + @order.zipcode %>
-        <br>
-        Total: <%= @order.tree.price %>
       </div>
+      <ul class="list-group">
+          <% @order.accessories.each do |a| %>
+            <li class="list-group-item">
+              <p class="tab">
+                <%= a.name %><br>
+                <%= a.description %><br>
+                <%= a.price %>
+              </p>
+            </li>
+          <% end %>
+        </ul>
     </div>
     <br>
   </div>

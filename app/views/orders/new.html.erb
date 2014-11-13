@@ -1,4 +1,5 @@
-<%= content_tag 'div', id: 'available_trees', data: { url: @trees.to_json } do %> <% end %>
+<%= content_tag :div, "", id: 'available_trees', data: { trees: @trees.to_json } %>
+<%= content_tag :div, "", id: 'accessories', data: { accessories: @accessories.to_json } %>
 
 <div class="container">
    <div class="row" id='top-row'>
@@ -90,8 +91,11 @@
             </div>
             <%= f.input :accessory_orders,
                         multiple: true,
-                        collection: Accessory.all,
-                        as: :check_boxes %>
+                        label: 'Available Accessories',
+                        collection: @accessories,
+                        label_method: Proc.new { |a| "$" + a.price.to_s + " " + a.name + ": " + a.description},
+                        as: :check_boxes,
+                        input_html: { class: 'accessories' } %>
                         <br>
             <%= f.input :window_id,
                         required: true,
