@@ -73934,3 +73934,34 @@ Started GET "/assets/tree-bg.jpg" for 127.0.0.1 at 2014-11-14 14:55:04 -0500
 
 
 Started GET "/assets/fraser.jpg" for 127.0.0.1 at 2014-11-14 14:55:04 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPhoneToOrder (20141114200438)
+  [1m[35m (1.1ms)[0m  BEGIN
+  [1m[36m (11.6ms)[0m  [1mALTER TABLE "orders" ADD COLUMN "phone" character varying(255) NOT NULL[0m
+PG::NotNullViolation: ERROR:  column "phone" contains null values
+: ALTER TABLE "orders" ADD COLUMN "phone" character varying(255) NOT NULL
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPhoneToOrder (20141114200438)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.8ms)[0m  [1mALTER TABLE "orders" ADD COLUMN "phone" character varying(255) NOT NULL[0m
+PG::NotNullViolation: ERROR:  column "phone" contains null values
+: ALTER TABLE "orders" ADD COLUMN "phone" character varying(255) NOT NULL
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddPhoneToOrder (20141114200438)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "orders" ADD COLUMN "phone" character varying(255)[0m
+  [1m[35mOrder Load (2.8ms)[0m  SELECT "orders".* FROM "orders"
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "orders" SET "phone" = $1, "updated_at" = $2 WHERE "orders"."id" = 11[0m  [["phone", "6098979069"], ["updated_at", "2014-11-14 20:12:47.771991"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "orders" SET "phone" = $1, "updated_at" = $2 WHERE "orders"."id" = 12  [["phone", "6098979069"], ["updated_at", "2014-11-14 20:12:47.780901"]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "orders" SET "phone" = $1, "updated_at" = $2 WHERE "orders"."id" = 13[0m  [["phone", "6098979069"], ["updated_at", "2014-11-14 20:12:47.782145"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "orders" SET "phone" = $1, "updated_at" = $2 WHERE "orders"."id" = 14  [["phone", "6098979069"], ["updated_at", "2014-11-14 20:12:47.783198"]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "orders" SET "phone" = $1, "updated_at" = $2 WHERE "orders"."id" = 15[0m  [["phone", "6098979069"], ["updated_at", "2014-11-14 20:12:47.784241"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "orders" SET "phone" = $1, "updated_at" = $2 WHERE "orders"."id" = 16  [["phone", "6098979069"], ["updated_at", "2014-11-14 20:12:47.785373"]]
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "orders" SET "phone" = $1, "updated_at" = $2 WHERE "orders"."id" = 17[0m  [["phone", "6098979069"], ["updated_at", "2014-11-14 20:12:47.786419"]]
+  [1m[35mSQL (0.2ms)[0m  UPDATE "orders" SET "phone" = $1, "updated_at" = $2 WHERE "orders"."id" = 18  [["phone", "6098979069"], ["updated_at", "2014-11-14 20:12:47.787451"]]
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "orders" ALTER "phone" SET NOT NULL[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141114200438"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"

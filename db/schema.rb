@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141110142113) do
+ActiveRecord::Schema.define(version: 20141114200438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 20141110142113) do
     t.boolean  "delivered",    default: false
     t.integer  "window_id"
     t.string   "instructions"
+    t.string   "phone",                        null: false
   end
 
   create_table "trees", force: true do |t|
