@@ -28,6 +28,17 @@
               <i class="fa fa-star "></i>
             <% end %>
           </td>
+          <% order.accessories.each do |a| %>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>+Accessory</td>
+              <td><%= a.name %></td>
+              <td>$<%= a.price %></td>
+              <td></td>
+              <td></td>
+            </tr>
+          <% end %>
         </tr>
       <% end %>
     </table>
