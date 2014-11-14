@@ -70406,3 +70406,289 @@ Started GET "/assets/fraser.jpg" for 127.0.0.1 at 2014-11-13 14:30:02 -0500
 
 
 Started GET "/assets/balsam.jpg" for 127.0.0.1 at 2014-11-13 14:30:02 -0500
+
+
+Started GET "/accessories" for 127.0.0.1 at 2014-11-13 19:42:40 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AccessoriesController#index as HTML
+Geokit is using the domain: localhost
+  [1m[35mLot Load (2.2ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  [1m[36mAccessory Load (1.1ms)[0m  [1mSELECT "accessories".* FROM "accessories"[0m
+  Rendered accessories/index.html.erb within layouts/application (106.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 267ms (Views: 228.5ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-13 19:42:40 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-13 19:42:40 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-13 19:42:40 -0500
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-11-13 19:42:40 -0500
+
+
+Started GET "/assets/jquery.autosize.js?body=1" for 127.0.0.1 at 2014-11-13 19:42:40 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-13 19:42:40 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-13 19:42:40 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-13 19:42:40 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-13 19:42:40 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-13 19:42:40 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-13 19:42:40 -0500
+
+
+Started GET "/assets/tree-bg.jpg" for 127.0.0.1 at 2014-11-13 19:42:41 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2014-11-13 19:42:46 -0500
+Processing by OrdersController#index as HTML
+Geokit is using the domain: localhost
+  Rendered orders/_onetwothree.html.erb (0.3ms)
+  [1m[35mTree Load (0.7ms)[0m  SELECT "trees".* FROM "trees"
+  [1m[36mType Load (1.0ms)[0m  [1mSELECT "types".* FROM "types"  WHERE "types"."id" IN (1, 2)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "trees".* FROM "trees"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "types".* FROM "types"  WHERE "types"."id" IN (1, 2)[0m
+  Rendered orders/_balsam_fraser.html.erb (67.6ms)
+  Rendered orders/index.html.erb within layouts/application (72.5ms)
+  [1m[35mLot Load (0.3ms)[0m  SELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 82ms (Views: 74.4ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/balsam.jpg" for 127.0.0.1 at 2014-11-13 19:42:46 -0500
+
+
+Started GET "/assets/fraser.jpg" for 127.0.0.1 at 2014-11-13 19:42:46 -0500
+
+
+Started GET "/accessories" for 127.0.0.1 at 2014-11-13 19:42:47 -0500
+Processing by AccessoriesController#index as HTML
+Geokit is using the domain: localhost
+  [1m[36mLot Load (0.4ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mAccessory Load (0.2ms)[0m  SELECT "accessories".* FROM "accessories"
+  Rendered accessories/index.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/accessories" for 127.0.0.1 at 2014-11-13 19:43:44 -0500
+Processing by AccessoriesController#index as HTML
+Geokit is using the domain: localhost
+  [1m[36mLot Load (0.4ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mAccessory Load (0.6ms)[0m  SELECT "accessories".* FROM "accessories"
+  Rendered accessories/index.html.erb within layouts/application (8.6ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-13 19:43:44 -0500
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-11-13 19:43:44 -0500
+
+
+Started GET "/assets/jquery.autosize.js?body=1" for 127.0.0.1 at 2014-11-13 19:43:44 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-13 19:43:44 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-13 19:43:44 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-13 19:43:44 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-13 19:43:44 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-13 19:43:44 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-13 19:43:44 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-13 19:43:44 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-13 19:43:44 -0500
+
+
+Started GET "/assets/tree-bg.jpg" for 127.0.0.1 at 2014-11-13 19:43:44 -0500
+
+
+Started POST "/accessories" for 127.0.0.1 at 2014-11-13 19:44:13 -0500
+Processing by AccessoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EQLK+NoorbC8E1j9cZYlw5IxjFpKZe/1Y4KFlT/zFKs=", "accessory"=>{"name"=>"Wreath 10 inch", "description"=>"Little wreath", "price"=>"19.99"}, "commit"=>"Create Accessory"}
+Geokit is using the domain: localhost
+  [1m[36mLot Load (0.3ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "accessories" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-11-14 00:44:13.064115"], ["description", "Little wreath"], ["name", "Wreath 10 inch"], ["price", 19.99], ["updated_at", "2014-11-14 00:44:13.064115"]]
+  [1m[35m (2.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/accessories
+Completed 302 Found in 17ms (ActiveRecord: 10.1ms)
+
+
+Started GET "/accessories" for 127.0.0.1 at 2014-11-13 19:44:13 -0500
+Processing by AccessoriesController#index as HTML
+Geokit is using the domain: localhost
+  [1m[36mLot Load (0.4ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mAccessory Load (0.3ms)[0m  SELECT "accessories".* FROM "accessories"
+  Rendered accessories/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-13 19:44:13 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-13 19:44:13 -0500
+
+
+Started GET "/assets/jquery.autosize.js?body=1" for 127.0.0.1 at 2014-11-13 19:44:13 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-13 19:44:13 -0500
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-11-13 19:44:13 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-13 19:44:13 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-13 19:44:13 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-13 19:44:13 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-13 19:44:13 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-13 19:44:13 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-13 19:44:13 -0500
+
+
+Started GET "/assets/tree-bg.jpg" for 127.0.0.1 at 2014-11-13 19:44:13 -0500
+
+
+Started GET "/accessories" for 127.0.0.1 at 2014-11-13 19:45:52 -0500
+Processing by AccessoriesController#index as HTML
+Geokit is using the domain: localhost
+  [1m[36mLot Load (0.3ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mAccessory Load (0.3ms)[0m  SELECT "accessories".* FROM "accessories"
+  Rendered accessories/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-13 19:45:52 -0500
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-13 19:45:52 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-13 19:45:52 -0500
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-11-13 19:45:52 -0500
+
+
+Started GET "/assets/jquery.autosize.js?body=1" for 127.0.0.1 at 2014-11-13 19:45:52 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-13 19:45:52 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-13 19:45:52 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-13 19:45:52 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-13 19:45:52 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-13 19:45:52 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-13 19:45:52 -0500
+
+
+Started GET "/assets/tree-bg.jpg" for 127.0.0.1 at 2014-11-13 19:45:52 -0500
+
+
+Started POST "/accessories" for 127.0.0.1 at 2014-11-13 19:46:01 -0500
+Processing by AccessoriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EQLK+NoorbC8E1j9cZYlw5IxjFpKZe/1Y4KFlT/zFKs=", "accessory"=>{"name"=>"Wreath", "description"=>"Wreath", "price"=>"10.99"}, "commit"=>"Create Accessory"}
+Geokit is using the domain: localhost
+  [1m[36mLot Load (0.3ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "accessories" ("created_at", "description", "name", "price", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", "2014-11-14 00:46:01.544425"], ["description", "Wreath"], ["name", "Wreath"], ["price", 10.99], ["updated_at", "2014-11-14 00:46:01.544425"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/accessories
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/accessories" for 127.0.0.1 at 2014-11-13 19:46:01 -0500
+Processing by AccessoriesController#index as HTML
+Geokit is using the domain: localhost
+  [1m[36mLot Load (0.4ms)[0m  [1mSELECT  "lots".* FROM "lots"  WHERE "lots"."id" = 1  ORDER BY "lots"."id" ASC LIMIT 1[0m
+  [1m[35mAccessory Load (0.2ms)[0m  SELECT "accessories".* FROM "accessories"
+  Rendered accessories/index.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/custom.css?body=1" for 127.0.0.1 at 2014-11-13 19:46:01 -0500
+
+
+Started GET "/assets/bootstrap.min.css?body=1" for 127.0.0.1 at 2014-11-13 19:46:01 -0500
+
+
+Started GET "/assets/best_in_place.js?body=1" for 127.0.0.1 at 2014-11-13 19:46:01 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-13 19:46:01 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-13 19:46:01 -0500
+
+
+Started GET "/assets/jquery.autosize.js?body=1" for 127.0.0.1 at 2014-11-13 19:46:01 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-13 19:46:01 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2014-11-13 19:46:01 -0500
+
+
+Started GET "/assets/bootstrap.min.js?body=1" for 127.0.0.1 at 2014-11-13 19:46:01 -0500
+
+
+Started GET "/assets/custom.js?body=1" for 127.0.0.1 at 2014-11-13 19:46:01 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-13 19:46:01 -0500
+
+
+Started GET "/assets/tree-bg.jpg" for 127.0.0.1 at 2014-11-13 19:46:01 -0500
