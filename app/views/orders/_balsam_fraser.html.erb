@@ -7,8 +7,6 @@
             <i class="fa fa-tree fa-3x" id="tree-icon">Balsam Fir</i>
           </div>
         </div>
-        <h4>Name: Abies balsamea</h4>
-        <h4>Heights: <%= Tree.all.includes(:type).select { |tree| tree.type.name == 'Balsam Fir' }.map(&:height).sort.join(', ') %>ft.</h4>
         <h4>Description:</h4>
         <p>Balsam fir is a beautiful pyramidal tree with short, flat, long-lasting, aromatic needles. Balsam fir and Fraser fir have many similar characteristics and some botanists consider them extensions of the same species. Balsam fir has a nice, dark green color and is very fragrant.</p>
       </div>
@@ -18,8 +16,6 @@
             <i class="fa fa-tree fa-3x" id="tree-icon">Fraser Fir</i>
           </div>
         </div>
-        <h4>Name: Abies fraseri</h4>
-        <h4>Heights: <%= Tree.all.includes(:type).select { |tree| tree.type.name == 'Fraser Fir' }.map(&:height).sort.join(', ') %>ft.</h4>
         <h4>Description:</h4>
         <p>The Fraser fir is quickly becoming the most premium species of the cut Christmas tree market. Its mild fragrance, shape, strong limbs, and ability to retain its soft needles for a long time when cut make it one of the best trees for this purpose. It is characterized by a heavy density and is known for its deep hues of blueish green.</p>
       </div>
