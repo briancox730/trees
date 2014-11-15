@@ -23,15 +23,9 @@
                 <tr>
                   <td><%= index + 1 %></td>
                   <td><%= order.name %></td>
-                  <td>
-                    <%= order.address + ", " + order.city + ", " + order.state + " " + order.zipcode %>
-                  </td>
-                  <td>
-                    <%= order.tree.height.to_s + " ft. " + order.tree.type.name %>
-                  </td>
-                  <td>
-                    <%= order.window.delivery_window if order.window.present? %>
-                  </td>
+                  <td><%= order.address + ", " + order.city + ", " + order.state + " " + order.zipcode %></td>
+                  <td><%= order.tree.nil? ? 'deleted' : order.tree.height.to_s + " ft. " + order.tree.type.name %></td>
+                  <td><%= order.window.delivery_window if order.window.present? %></td>
                   <td class='text-right'>
                     <%= link_to order_delivered_orders_path(order_id: order.id), method: :post, class: 'btn btn-success' do %>
                       <i class="fa fa-tree "></i>
@@ -41,6 +35,16 @@
                     <% end %>
                   </td>
                 </tr>
+                <% order.accessories.each do |a| %>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>+Accessory</td>
+                    <td><%= a.name %></td>
+                    <td>$<%= a.price %></td>
+                    <td></td>
+                  </tr>
+                <% end %>
               <% end %>
             </table>
           </div>
