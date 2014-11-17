@@ -22,6 +22,13 @@ class OrdersController < ApplicationController
       redirect_to order_confirmation_orders_path(id: @order.id)
     else
       flash[:now] = "Order could not be processed!"
+      @zip = @order.zipcode
+      @state = @order.state
+      @city = @order.city
+      @available_trees, @trees = Order.available_trees(@zip)
+      @windows = Window.all
+      @accessories = Accessory.all
+      params[:accessory_orders] = params[:order][:accessory_orders]
       render :new
     end
   end

@@ -11,7 +11,13 @@
         <h1>Trees to your door</h1>
         <br>
         <%= simple_form_for @order do |f| %>
-          <%= f.error_notification %>
+          <% if @order.errors.any? %>
+            <ul>
+              <% @order.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          <% end %>
 
           <div class="form-inputs">
             <%= f.input :tree_id,
@@ -30,7 +36,7 @@
             <%= f.input :name,
                         required: true,
                         label: false,
-                        placeholder: 'Full Name',
+                        placeholder: 'Full Name (required)',
                         input_html: { class: 'form-control'} %>
                         <br>
             <div class="row">
@@ -38,7 +44,7 @@
                 <%= f.input :email,
                             required: true,
                             label: false,
-                            placeholder: 'Email',
+                            placeholder: 'Email (required)',
                             input_html: { class: 'form-control'} %>
                             <br>
               </div>
@@ -47,7 +53,7 @@
                 <%= f.input :phone,
                             required: true,
                             label: false,
-                            placeholder: 'Phone Number',
+                            placeholder: 'Phone Number (required)',
                             input_html: { class: 'form-control'} %>
                             <br>
               </div>
@@ -55,7 +61,7 @@
             <%= f.input :address,
                         required: true,
                         label: false,
-                        placeholder: 'Address',
+                        placeholder: 'Address (required)',
                         input_html: { class: 'form-control'} %>
                         <br>
             <div class="row">
@@ -64,7 +70,7 @@
                     <%= f.input :city,
                                 required: true,
                                 label: false,
-                                placeholder: 'City',
+                                placeholder: 'City (required)',
                                 input_html: { class: 'form-control'} %>
                                 <br>
                   <% else %>
@@ -81,7 +87,7 @@
                     <%= f.input :state,
                                 required: true,
                                 label: false,
-                                placeholder: 'State',
+                                placeholder: 'State (required)',
                                 input_html: { class: 'form-control'} %>
                                 <br>
                   <% else %>
@@ -108,6 +114,7 @@
                         collection: @accessories,
                         label_method: Proc.new { |a| "$" + a.price.to_s + " " + a.name + ": " + a.description},
                         as: :check_boxes,
+                        checked: params[:accessory_orders],
                         input_html: { class: 'accessories' } %>
                         <br>
             <%= f.input :window_id,
