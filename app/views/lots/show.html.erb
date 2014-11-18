@@ -55,6 +55,54 @@
   </div>
 </div>
 
+<% if !@delivered.empty? %>
+  <div class='row'>
+    <div class='col-md-12'>
+      <br>
+      <div class='panel panel-tree'>
+        <div class="panel-heading">Delivered Orders</div>
+        <div class='panel-body'>
+          <div style='overflow: auto; max-height: 350px;'>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Name</th>
+                  <th>Address</th>
+                  <th>Tree</th>
+                  <th>Delivery Window</th>
+                  <th class='text-right'>Delivered/Release?</th>
+                </tr>
+              </thead>
+              <% @delivered.each_with_index do |order, index| %>
+                <tr>
+                  <td><%= index + 1 %></td>
+                  <td><%= order.name %></td>
+                  <td><%= order.address + ", " + order.city + ", " + order.state + " " + order.zipcode %></td>
+                  <td><%= order.tree.nil? ? 'deleted' : order.tree.height.to_s + " ft. " + order.tree.type.name %></td>
+                  <td><%= order.window.delivery_window if order.window.present? %></td>
+                  <td class='text-right'>
+                  </td>
+                </tr>
+                <% order.accessories.each do |a| %>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td>+Accessory</td>
+                    <td><%= a.name %></td>
+                    <td>$<%= a.price %></td>
+                    <td></td>
+                  </tr>
+                <% end %>
+              <% end %>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <div class='row'>
   <div class='col-md-8'>
     <div class='panel panel-tree'>
