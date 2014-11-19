@@ -13,40 +13,42 @@
             <i class="fa fa-tree fa-3x" id="tree-icon"><%= @order.tree.height.to_s + " ft. " + @order.tree.type.name %></i>
           </div>
         </div>
-        <br>
-        <h3>Deliver To:</h3>
-        <p class="tab">
-          <%= @order.name %>
-          <br>
-          <%= @order.email %>
-          <br>
-          <%= @order.address %>
-          <br>
-          <%= @order.city + ", " + @order.state + ", " + @order.zipcode %>
-        </p>
 
       </div>
       <ul class="list-group">
-        <% @accessories.each do |a| %>
-          <li class="list-group-item">
+        <li class="list-group-item">
+          <h3><i class="fa fa-tree"></i> What now?</h3>
+          <h5 class="tab">You will be called within 24 hours to set up delivery</h5>
+          <h3><i class="fa fa-tree"></i> How do I pay?</h3>
+          <h5 class="tab">Pay by cash on delivery</h5>
+        </li>
+        <li class="list-group-item">
+          <br>
+          <h3>Deliver To:</h3>
+          <p class="tab">
+            <%= @order.name %>
+            <br>
+            <%= @order.email %>
+            <br>
+            <%= @order.address %>
+            <br>
+            <%= @order.city + ", " + @order.state + ", " + @order.zipcode %>
+          </p>
+          <% @accessories.each do |a| %>
             <p class="tab">
               <%= a.name %><br>
               <%= a.description %><br>
-              <%= a.price %>
+              <%= "$" + a.price.floor.to_i.to_s %>
             </p>
-          </li>
-        <% end %>
-        <% if @order.instructions.present? %>
-          <li class="list-group-item">
+          <% end %>
+          <% if @order.instructions.present? %>
             <h4>Instructions:</h4>
             <p class="tab"><%= @order.instructions %></p>
-          </li>
-        <% end %>
-        <li class="list-group-item">
-          <h4 class="tab">Tree: <%= @order.tree.height.to_s + "ft. " + @order.tree.type.name + " $" + @order.tree.price.to_s %></h4>
+          <% end %>
+          <h4 class="tab">Tree: <%= @order.tree.height.to_s + "ft. " + @order.tree.type.name + " $" + @order.tree.price.floor.to_i.to_s %></h4>
         </li>
         <li class="list-group-item">
-          <h3 class='price-h3'>Total: <%= @total.round(2) %></h3>
+          <h3 class='price-h3'>Total: <%= "$" + @total.floor.to_i.to_s %></h3>
         </li>
       </ul>
     </div>

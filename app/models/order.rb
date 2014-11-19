@@ -36,7 +36,7 @@ class Order < ActiveRecord::Base
     trees = Tree.where(id: trees_ids)
     available_trees = []
     trees.each do |t|
-      available_trees << ["#{t.height} ft. #{t.type.name} - $#{t.price}", t.id]
+      available_trees << ["#{t.height} ft. #{t.type.name} - $#{t.price.to_i}", t.id]
     end
     return available_trees, trees
   end

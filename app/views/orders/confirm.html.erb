@@ -32,7 +32,7 @@
             <p class="tab">
               <%= a.name %><br>
               <%= a.description %><br>
-              <%= a.price %>
+              <%= "$" + a.price.floor.to_i.to_s %>
             </p>
           </li>
         <% end %>
@@ -43,10 +43,10 @@
           </li>
         <% end %>
         <li class="list-group-item">
-          <h4 class="tab">Tree: <%= @order.tree.height.to_s + "ft. " + @order.tree.type.name + " $" + @order.tree.price.to_s %></h4>
+          <h4 class="tab">Tree: <%= @order.tree.height.to_s + "ft. " + @order.tree.type.name + " $" + @order.tree.price.floor.to_i.to_s %></h4>
         </li>
         <li class="list-group-item">
-          <h3 class='price-h3'>Total: <%= @total.round(2) %></h3>
+          <h3 class='price-h3'>Total: <%= "$" + @total.floor.to_i.to_s %></h3>
           <div class='text-right'>
             <%= simple_form_for @order, url: orders_path(accessory_orders: @accessories.map { |a| a.id }) do |f| %>
               <%= f.input :tree_id, as: :hidden %>
