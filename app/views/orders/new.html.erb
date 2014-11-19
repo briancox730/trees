@@ -112,7 +112,7 @@
                         multiple: true,
                         label: 'Available Accessories',
                         collection: @accessories,
-                        label_method: Proc.new { |a| "$" + a.price.to_s + " " + a.name + ": " + a.description},
+                        label_method: Proc.new { |a| "$" + a.price.to_i.to_s + " " + a.name + ": " + a.description},
                         as: :check_boxes,
                         checked: params[:accessory_orders],
                         input_html: { class: 'accessories' } %>
