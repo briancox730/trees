@@ -3,14 +3,14 @@
 
 <div class="container">
    <div class="row" id='top-row'>
-    <div class="col-md-2 hidden-sm hidden-xs">
+    <div class="col-md-2 col-sm-2 hidden-xs">
     </div>
-    <div class="col-md-8 col-sm-12 col-xs-12">
+    <div class="col-md-8 col-sm-8 col-xs-12">
       <br>
       <div class="well">
         <h1>Trees to your door</h1>
         <br>
-        <%= simple_form_for @order do |f| %>
+        <%= simple_form_for @order, url: confirm_orders_path do |f| %>
           <% if @order.errors.any? %>
             <ul>
               <% @order.errors.full_messages.each do |msg| %>
@@ -53,7 +53,7 @@
                 <%= f.input :phone,
                             required: true,
                             label: false,
-                            placeholder: 'Phone Number (required)',
+                            placeholder: 'Phone Number with area code (required)',
                             input_html: { class: 'form-control'} %>
                             <br>
               </div>
@@ -142,7 +142,7 @@
       </div>
       <br>
     </div>
-    <div class="col-md-2 hidden-sm hidden-xs">
+    <div class="col-md-2 col-sm-2 hidden-xs">
     </div>
   </div>
   <%= render "onetwothree" %>

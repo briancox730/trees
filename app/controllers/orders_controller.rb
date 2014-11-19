@@ -14,13 +14,10 @@ class OrdersController < ApplicationController
     @accessories = Accessory.all
   end
 
-  def create
+  def confirm
     @order = Order.new(order_params)
 
-    if @order.save
-      Order.build_accessories(@order, params[:order][:accessory_orders])
-      redirect_to order_confirmation_orders_path(id: @order.id)
-    else
+    unless @order.valid?
       flash[:now] = "Order could not be processed!"
       @zip = @order.zipcode
       @state = @order.state
@@ -29,13 +26,27 @@ class OrdersController < ApplicationController
       @windows = Window.all
       @accessories = Accessory.all
       params[:accessory_orders] = params[:order][:accessory_orders]
-      render :new
+      render action: :new
+    end
+    @accessories = Accessory.where(id: params[:order][:accessory_orders])
+    @total = @accessories.empty? ? @order.tree.price : @order.tree.price + @accessories.inject(0){ |sum, a| sum + a.price }
+  end
+
+  def create
+    @order = Order.new(order_params)
+    if @order.save
+      Order.build_accessories(@order, params[:accessory_orders])
+      redirect_to order_confirmation_orders_path(id: @order.id)
+    else
+      flash[:now] = "Order could not be processed!"
+      redirect_to orders_path
     end
   end
 
   def order_confirmation
     @order = Order.find(params[:id])
     @accessories = @order.accessories
+    @total = @accessories.empty? ? @order.tree.price : @order.tree.price + @accessories.inject(0){ |sum, a| sum + a.price }
   end
 
   def order_claim
@@ -99,6 +110,8 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:tree_id, :name, :email, :address, :city, :state, :zipcode, :lot_id, :window_id, :accessory_orders, :instructions)
+    params.require(:order).permit(:tree_id, :name, :email, :address, :city, :state,
+                                  :zipcode, :lot_id, :window_id,
+                                  :instructions, :phone, :order, :accessory_orders)
   end
 end

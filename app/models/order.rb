@@ -7,12 +7,13 @@ class Order < ActiveRecord::Base
   validates_presence_of :tree_id
   validates_presence_of :name
   validates_presence_of :email
-  validates_presence_of :phone
   validates_presence_of :address
   validates_presence_of :city
   validates_presence_of :zipcode
   validates_presence_of :state
   validates_presence_of :window_id
+  validates :phone, length: { is: 10 }
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
 
   def self.build_accessories(order, accessories)
     accessories.each do |a|

@@ -1,10 +1,10 @@
 <div class="row" id="top-row">
-  <div class="col-md-3">
+  <div class="col-md-3 col-sm-2">
   </div>
-  <div class='col-md-6'>
+  <div class='col-md-6 col-sm-8'>
     <div class="panel panel-success">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= @order.name %></h3>
+        <h3 class="panel-title">Order Processed!</h3>
       </div>
       <div class="panel-body">
 
@@ -15,29 +15,45 @@
         </div>
         <br>
         <h3>Deliver To:</h3>
-        <p class="tab"><%= @order.address %>
-        <br>
-        <%= @order.city + ", " + @order.state + ", " + @order.zipcode %>
-        <br>
-        <%= @order.tree.price %></p>
+        <p class="tab">
+          <%= @order.name %>
+          <br>
+          <%= @order.email %>
+          <br>
+          <%= @order.address %>
+          <br>
+          <%= @order.city + ", " + @order.state + ", " + @order.zipcode %>
+        </p>
 
       </div>
       <ul class="list-group">
-          <% @order.accessories.each do |a| %>
-            <li class="list-group-item">
-              <p class="tab">
-                <%= a.name %><br>
-                <%= a.description %><br>
-                <%= a.price %>
-              </p>
-            </li>
-          <% end %>
-        </ul>
+        <% @accessories.each do |a| %>
+          <li class="list-group-item">
+            <p class="tab">
+              <%= a.name %><br>
+              <%= a.description %><br>
+              <%= a.price %>
+            </p>
+          </li>
+        <% end %>
+        <% if @order.instructions.present? %>
+          <li class="list-group-item">
+            <h4>Instructions:</h4>
+            <p class="tab"><%= @order.instructions %></p>
+          </li>
+        <% end %>
+        <li class="list-group-item">
+          <h4 class="tab">Tree: <%= @order.tree.height.to_s + "ft. " + @order.tree.type.name + " $" + @order.tree.price.to_s %></h4>
+        </li>
+        <li class="list-group-item">
+          <h3 class='price-h3'>Total: <%= @total.round(2) %></h3>
+        </li>
+      </ul>
     </div>
     <br>
   </div>
 
-  <div class="col-md-3">
+  <div class="col-md-3 col-sm-2">
   </div>
 </div>
 

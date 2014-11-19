@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       post 'order_claim'
       post 'order_release'
       post 'order_delivered'
+      post 'confirm'
     end
   end
 end
