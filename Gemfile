@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 gem 'geokit-rails'
 gem 'best_in_place'
+gem 'newrelic_rpm'
 
 group :production, :staging do
   gem 'unicorn', '4.6.3' # rack http server
