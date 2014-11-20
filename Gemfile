@@ -29,11 +29,12 @@ gem 'spring',        group: :development
 # gem 'bcrypt', '~> 3.1.7'
 gem 'geokit-rails'
 gem 'best_in_place'
-gem 'newrelic_rpm'
 
 group :production, :staging do
   gem 'unicorn', '4.6.3' # rack http server
   gem 'rails_12factor'
+  gem 'newrelic_rpm'
+  gem 'rollbar', '~> 1.2.6'
 end
 
 group :development, :test do
