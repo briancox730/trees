@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
   before_filter :authenticate_lot!, only: [:order_claim, :order_release]
 
+  def index
+    @contact = Contact.new
+  end
+
   def new
     @zip = params[:zip]
     @geo = Geokit::Geocoders::MultiGeocoder.geocode(@zip)
@@ -12,6 +16,7 @@ class OrdersController < ApplicationController
     @order = Order.new
     @windows = Window.all
     @accessories = Accessory.all
+    @contact = Contact.new
   end
 
   def confirm
