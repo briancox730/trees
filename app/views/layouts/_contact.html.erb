@@ -6,7 +6,7 @@
         <h4 class="modal-title" id="contactLabel">We want to hear from you!</h4>
       </div>
       <div class="modal-body" id='modal-body'>
-        <%= simple_form_for @contact, method: :post, remote: true, html: { id: :contacts } do |f| %>
+        <%= simple_form_for Contact.new, method: :post, remote: true, html: { id: :contacts } do |f| %>
           <%= f.input :name,
                       required: true,
                       label: false,
