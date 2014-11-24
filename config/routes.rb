@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       get 'open_orders'
     end
   end
+  resources :contacts
   resources :accessories
   resources :zips
   resources :trees
