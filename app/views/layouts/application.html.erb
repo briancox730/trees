@@ -35,7 +35,7 @@
               <li><%= link_to 'Accessories', accessories_path %>
               <li><%= link_to 'Logout', destroy_lot_session_path, method: :delete %></li>
             <% else %>
-              <li><a data-toggle="modal" data-target="#contact">Contact Us</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#contact">Contact Us</a></li>
               <li><%= link_to 'Sign In', new_lot_session_path %></li>
             <% end %>
           </ul>
