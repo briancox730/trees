@@ -33,7 +33,7 @@ class Order < ActiveRecord::Base
       end
     end
     trees_ids.uniq!
-    trees = Tree.where(id: trees_ids)
+    trees = Tree.where(id: trees_ids).sort { |a,b| [a.type_id, a.price] <=> [b.type_id, b.price] }
     available_trees = []
     trees.each do |t|
       available_trees << ["#{t.height} ft. #{t.type.name} - $#{t.price.to_i}", t.id]
