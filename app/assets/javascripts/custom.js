@@ -11,6 +11,8 @@ $(document).ready(function(){
     var checked_accessories = $('input.accessories:checked');
     var total = 0;
 
+    debugger;
+
     $.each(trees, function(k,v) {
       if (v['id'] == tree_id) {
         total = total + v['price']
