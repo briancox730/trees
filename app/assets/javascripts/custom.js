@@ -31,12 +31,13 @@ $(document).ready(function(){
     $('#tree-display').removeClass('fraser');
     $('#tree-display').addClass(type);
     $('#tree-icon').text(' '+text[0]+'ft. '+text[2]);
-    $('#price').text('$' + total.toFixed(2))
+    $('#price').text('Total: $' + total.toFixed(2))
   };
 
   $('#tree-display').removeClass('display-none');
   tree_dropdown();
 
+  $('[data-toggle="popover"]').popover();
   $('#order_tree_id').change(tree_dropdown);
   $('input.accessories').change(tree_dropdown);
 });

@@ -117,6 +117,7 @@
                         checked: params[:accessory_orders],
                         input_html: { class: 'accessories' } %>
                         <br>
+            <h3>When would you like your tree delivered?</h3>
             <%= f.input :window_id,
                         required: true,
                         label: false,
@@ -132,7 +133,7 @@
                         <br>
           </div>
 
-          <h3 id='price'></h3>
+          <h3 id='price'>Total: </h3>
           <br>
 
           <div class="form-actions">
