@@ -13,7 +13,7 @@
                   <th>Email</th>
                   <th>Phone</th>
                   <th>Message</th>
-                  <th>Read?</th>
+                  <th class="text-right">Read?</th>
                 </tr>
               </thead>
               <tbody>
@@ -24,7 +24,7 @@
                   <td><%= c.email %></td>
                   <td><%= c.phone %></td>
                   <td><%= c.message %></td>
-                  <td>
+                  <td class="text-right">
                     <%= link_to read_contacts_path(id: c.id), data: { confirm: "Are you sure?" }, method: :post, class: 'btn btn-success' do %>
                       <i class="fa fa-check"></i>
                     <% end %>
@@ -54,7 +54,7 @@
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Message</th>
-                <th>Mark Unread?</th>
+                <th class="text-right">Mark Unread?</th>
               </tr>
             </thead>
             <tbody>
@@ -65,7 +65,7 @@
                   <td><%= c.email %></td>
                   <td><%= c.phone %></td>
                   <td><%= c.message %></td>
-                  <td>
+                  <td class="text-right">
                     <%= link_to unread_contacts_path(id: c.id), data: { confirm: "Are you sure?" }, method: :post, class: 'btn btn-primary' do %>
                       <i class="fa fa-check"></i>
                     <% end %>
