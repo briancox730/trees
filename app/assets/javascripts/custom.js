@@ -11,8 +11,6 @@ $(document).ready(function(){
     var checked_accessories = $('input.accessories:checked');
     var total = 0;
 
-    debugger;
-
     $.each(trees, function(k,v) {
       if (v['id'] == tree_id) {
         total = total + v['price']
@@ -37,7 +35,6 @@ $(document).ready(function(){
   $('#tree-display').removeClass('display-none');
   tree_dropdown();
 
-  $('[data-toggle="popover"]').popover();
   $('#order_tree_id').change(tree_dropdown);
   $('input.accessories').change(tree_dropdown);
 });
