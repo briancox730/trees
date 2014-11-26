@@ -8,7 +8,7 @@
     <div class="col-md-8 col-sm-8 col-xs-12">
       <br>
       <div class="well">
-        <h1>Trees to your door</h1>
+        <h1>Choose your variety</h1>
         <br>
         <%= simple_form_for @order, url: confirm_orders_path do |f| %>
           <% if @order.errors.any? %>
@@ -146,7 +146,10 @@
     <div class="col-md-2 col-sm-2 hidden-xs">
     </div>
   </div>
-  <%= render "onetwothree" %>
 </div>
+
+<%= render "onetwothree" %>
+
+<%= render "layouts/faq" %>
 
 <%= render "balsam_fraser" %>
