@@ -1,4 +1,6 @@
 class ContactsController < ApplicationController
+  before_filter :authenticate_lot!
+
   def index
     @contacts = Contact.where(read: false)
     @read = Contact.where(read: true)

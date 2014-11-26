@@ -1,4 +1,6 @@
 class AvailableTreesController < ApplicationController
+  before_filter :authenticate_lot!
+
   def create
     @lot = Lot.find(params[:available_tree][:lot_id])
     @available_tree = @lot.available_trees.new(available_tree_params)

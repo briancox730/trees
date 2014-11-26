@@ -1,5 +1,5 @@
 class AccessoriesController < ApplicationController
-  before_action :authenticate_lot!
+  before_filter :authenticate_lot!
 
   def index
     @accessories = Accessory.all

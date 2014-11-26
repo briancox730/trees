@@ -33,7 +33,8 @@
               <li><%= link_to current_lot.name, lot_path(current_lot) %></li>
               <li><%= link_to 'Claim orders!', open_orders_lots_path %></li>
               <li><%= link_to 'Trees', trees_path %></li>
-              <li><%= link_to 'Accessories', accessories_path %>
+              <li><%= link_to 'Accessories', accessories_path %></li>
+              <li><%= link_to 'Messages', contacts_path %></li>
               <li><%= link_to 'Logout', destroy_lot_session_path, method: :delete %></li>
             <% else %>
               <li><a href="#" data-toggle="modal" data-target="#contact">Contact Us</a></li>

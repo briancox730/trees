@@ -1,4 +1,6 @@
 class ZipsController < ApplicationController
+  before_filter :authenticate_lot!
+
   def create
     @zip = Zip.new(zip_params)
     if @zip.save
