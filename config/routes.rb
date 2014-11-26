@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     collection do
       post 'read'
       post 'unread'
+      get 'faq'
     end
   end
   resources :accessories

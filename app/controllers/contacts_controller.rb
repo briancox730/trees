@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  before_filter :authenticate_lot!
+  before_filter :authenticate_lot!, except: [:faq]
 
   def index
     @contacts = Contact.where(read: false)
