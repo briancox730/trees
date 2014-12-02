@@ -13,12 +13,19 @@ class OrdersController < ApplicationController
 
   def new
     @zip = params[:zip]
+    @available_trees, @trees = Order.available_trees(@zip)
+    if @zip.nil?
+      flash[:notice] = "We need a zipcode!"
+      redirect_to orders_path
+    elsif @available_trees.empty?
+      flash[:notice] = "Sorry we dont have any trees in that area!"
+      redirect_to orders_path
+    end
     @geo = Geokit::Geocoders::MultiGeocoder.geocode(@zip)
     if @geo.success
       @state = @geo.state
       @city = @geo.city
     end
-    @available_trees, @trees = Order.available_trees(@zip)
     @order = Order.new
     @windows = Window.all
     @accessories = Accessory.all
