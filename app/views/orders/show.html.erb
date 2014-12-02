@@ -29,11 +29,6 @@
             <%= @order.address %>
             <br>
             <%= @order.city + ", " + @order.state + ", " + @order.zipcode %>
-            <br>
-            <% if @order.instructions.present? %>
-              <% @order.instructions %>
-              <br>
-            <% end %>
           </p>
           <% @accessories.each do |a| %>
             <p class="tab">
