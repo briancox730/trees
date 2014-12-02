@@ -28,7 +28,7 @@
                   <td><%= order.window.delivery_window if order.window.present? %></td>
                   <td class='text-right'>
                     <%= link_to order_path(order_id: order.id), class: 'btn btn-warning' do %>
-                      <i class="fa fa-check "></i>
+                      <i class="fa fa-search "></i>
                     <% end %>
                     <%= link_to order_delivered_orders_path(order_id: order.id), method: :post, class: 'btn btn-success' do %>
                       <i class="fa fa-tree "></i>
