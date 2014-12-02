@@ -5,6 +5,12 @@ class OrdersController < ApplicationController
     @contact = Contact.new
   end
 
+  def show
+    @order = Order.find(params[:order_id])
+    @accessories = @order.accessories
+    @total = @accessories.empty? ? @order.tree.price : @order.tree.price + @accessories.inject(0){ |sum, a| sum + a.price }
+  end
+
   def new
     @zip = params[:zip]
     @geo = Geokit::Geocoders::MultiGeocoder.geocode(@zip)

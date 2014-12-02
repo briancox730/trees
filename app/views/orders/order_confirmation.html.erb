@@ -36,7 +36,7 @@
           </p>
           <% @accessories.each do |a| %>
             <p class="tab">
-              <%= a.name %><br>
+              <strong><%= a.name %></strong><br>
               <%= a.description %><br>
               <%= "$" + a.price.floor.to_i.to_s %>
             </p>
