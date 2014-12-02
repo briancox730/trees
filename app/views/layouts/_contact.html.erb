@@ -3,12 +3,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="contactLabel">We want to hear from you!</h4>
+        <h3 class="modal-title" id="contactLabel">We want to hear from you!</h3>
       </div>
       <div class='row'>
         <div class='col-md-1 col-sm-1 hidden-xs'></div>
         <div class='col-md-10 col-sm-10 col-xs-12'>
           <div class="modal-body" id='modal-body'>
+            <h3>Hassle Free Trees</h3>
+            <p class="tab"><strong>Phone:</strong> +1-978-766-5866<br>
+               <strong>Email:</strong> <%= mail_to 'thechristmastreeguys1@gmail.com' %></p><br>
+
             <%= simple_form_for Contact.new, method: :post, remote: true, html: { id: :contacts } do |f| %>
               <%= f.input :name,
                           required: true,
