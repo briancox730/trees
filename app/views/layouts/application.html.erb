@@ -33,11 +33,7 @@
               <li><%= link_to current_lot.name, lot_path(current_lot) %></li>
               <li>
                 <%= link_to open_orders_lots_path do %>
-                  <% if Order.where(lot_id: nil).present? %>
-                    <%= 'Claim Orders!(' + Order.where(lot_id: nil).count.to_s + ')' %>
-                  <% else %>
-                    Claim Orders!
-                  <% end %>
+                  <%= 'Claim Orders! (' + Order.where(lot_id: nil).count.to_s + ')' %>
                 <% end %>
               </li>
               <li><%= link_to 'Trees', trees_path %></li>
