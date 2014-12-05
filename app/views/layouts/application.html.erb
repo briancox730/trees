@@ -31,7 +31,15 @@
           <ul class="nav navbar-nav navbar-right">
             <% if current_lot.present? %>
               <li><%= link_to current_lot.name, lot_path(current_lot) %></li>
-              <li><%= link_to 'Claim orders!', open_orders_lots_path %></li>
+              <li>
+                <%= link_to open_orders_lots_path do %>
+                  <% if Order.where(lot_id: nil).present? %>
+                    <%= 'Claim Orders!(' + Order.where(lot_id: nil).count.to_s + ')' %>
+                  <% else %>
+                    Claim Orders!
+                  <% end %>
+                <% end %>
+              </li>
               <li><%= link_to 'Trees', trees_path %></li>
               <li><%= link_to 'Accessories', accessories_path %></li>
               <li><%= link_to 'Messages', contacts_path %></li>
@@ -79,14 +87,4 @@
     $('.trees-bg').css('background-size', css);
   </script>
 </body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-57227947-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
 </html>
