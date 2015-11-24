@@ -28,35 +28,41 @@
                 </td>
               </tr>
             <% end %>
-            <%= simple_form_for @new_accessory do |f| %>
-              <tr>
-                <td>New</td>
-                <td>
-                  <%= f.input :name,
-                              label: false,
-                              required: true,
-                              placeholder: 'Name',
-                              input_html: { class: 'form-control'} %>
-                </td>
-                <td>
-                  <%= f.input :description,
-                              label: false,
-                              placeholder: 'Description',
-                              required: true,
-                              input_html: { class: 'form-control'} %>
-                </td>
-                <td>
-                  <%= f.input :price,
-                              label: false,
-                              placeholder: 'Price (29.99)',
-                              required: true,
-                              input_html: { class: 'form-control'} %>
-                </td>
-                <td class="text-right">
-                  <%= f.submit 'Create Accessory', class: 'btn btn-success' %>
-                </td>
-              </tr>
-            <% end %>
+            <tr>
+              <td colspan="5">
+                <table width="100%">
+                  <%= simple_form_for @new_accessory do |f| %>
+                    <tr>
+                      <td>New</td>
+                      <td>
+                        <%= f.input :name,
+                                    label: false,
+                                    required: true,
+                                    placeholder: 'Name',
+                                    input_html: { class: 'form-control'} %>
+                      </td>
+                      <td>
+                        <%= f.input :description,
+                                    label: false,
+                                    placeholder: 'Description',
+                                    required: true,
+                                    input_html: { class: 'form-control'} %>
+                      </td>
+                      <td>
+                        <%= f.input :price,
+                                    label: false,
+                                    placeholder: 'Price (29.99)',
+                                    required: true,
+                                    input_html: { class: 'form-control'} %>
+                      </td>
+                      <td class="text-right">
+                        <%= f.submit 'Create Accessory', class: 'btn btn-success' %>
+                      </td>
+                    </tr>
+                  <% end %>
+                </table>
+              </td>
+            </tr>
           </table>
         </div>
       </div>
